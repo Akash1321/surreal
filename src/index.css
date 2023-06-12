@@ -38,6 +38,10 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+a{
+  text-decoration: none;
+}
+
 html,
 body {
   height: 100%;
@@ -100,6 +104,10 @@ body{
   color: var(--clr-primary);
   font-size: 16px;
   font-family: var(--ff-primary);
+}
+
+button{
+  border: none;
 }
 
 

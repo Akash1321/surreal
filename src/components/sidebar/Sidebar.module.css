@@ -1,0 +1,44 @@
+.sidebar{
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    width: 20vw;
+    height: 70vh;
+}
+
+.listItem{
+    width: 10rem;
+    padding: 16px;
+    display: flex;
+    gap: 1rem;
+    margin-inline: auto;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.icons{
+    transition: transform 0.2s ease-in;
+}
+
+.listItem:hover{
+    .icons{
+        transform: scale(1.1);
+    }
+}
+
+.listItem a{
+    color: var(--clr-primary);
+    display: flex;
+    gap: 1rem;
+}
+
+.create{
+    background-color: var(--clr-accent);
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+    padding: 0.8rem 3rem;
+    border-radius: 2rem;
+    margin-top: auto;
+    align-self: center;
+}
