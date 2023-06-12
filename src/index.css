@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+:root{
+  --clr-primary: #F1F1F1;
+  --clr-background: #000000;
+  --clr-accent: #6F46A9;
+
+  --ff-primary: 'Lato', sans-serif;
+
+  --fw-black: 900;
+  --fw-bold: 700;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  --fs-400: 1rem;
+  --fs-500: 2rem;
+}
+
 
 *,
 *::before,
@@ -75,3 +93,13 @@ h6 {
     scroll-behavior: auto !important;
   }
 }
+
+
+body{
+  background-color: var(--clr-background);
+  color: var(--clr-primary);
+  font-size: 16px;
+  font-family: var(--ff-primary);
+}
+
+
