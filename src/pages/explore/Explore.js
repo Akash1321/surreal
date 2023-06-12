@@ -1,6 +1,6 @@
 const Explore = () => {
     return (
-        <h2>Bookmark</h2>
+        <h2>Explore</h2>
     )
 };
 

@@ -1,4 +1,8 @@
 .sidebar{
+    display: none;
+}
+
+.sidebar{
     padding: 1rem;
     position: fixed;
     left: 0;
@@ -33,6 +37,11 @@
     gap: 1rem;
 }
 
+.active{
+ color: var(--clr-accent) !important;
+
+}
+
 .create{
     background-color: var(--clr-accent);
     color: var(--clr-primary);
@@ -41,4 +50,10 @@
     border-radius: 2rem;
     margin-top: auto;
     align-self: center;
+}
+
+@media(min-width: 50em){
+    .sidebar{
+        display: flex;
+    }
 }
