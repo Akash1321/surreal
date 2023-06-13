@@ -1,10 +1,11 @@
 import AllRoutes from 'Routes/AllRoutes';
 import './App.css';
-import {BottomNav, Sidebar} from "components";
+import {BottomNav, Header, Sidebar} from "components";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Sidebar />
       <AllRoutes />
       <BottomNav />
