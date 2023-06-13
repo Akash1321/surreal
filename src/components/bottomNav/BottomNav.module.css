@@ -14,6 +14,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
+    padding-inline: 1rem;
 }
 
 .listItem a{
@@ -22,17 +23,17 @@
 
 .create{
     position: absolute;
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
-    top: -4rem;
+    top: -4.5rem;
     right: 1rem;
     background-color: var(--clr-accent);
 }
 
 .plus{
     margin-inline: auto;
-    color: var(--clr-primary);
+    color: var(--clr-white);
 }
 
 
