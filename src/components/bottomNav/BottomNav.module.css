@@ -1,0 +1,44 @@
+.bottomNav{
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    position: fixed;
+    bottom: 0;
+}
+
+.active{
+    color: var(--clr-accent) !important;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+}
+
+.listItem a{
+    color: var(--clr-primary);
+}
+
+.create{
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    top: -4.5rem;
+    right: 1rem;
+    background-color: var(--clr-accent);
+}
+
+.plus{
+    margin-inline: auto;
+    color: var(--clr-white);
+}
+
+
+@media(min-width: 50em){
+    .bottomNav{
+        display: none;
+    }
+}
