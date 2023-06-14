@@ -1,9 +1,15 @@
+import AllRoutes from 'Routes/AllRoutes';
 import './App.css';
+import {BottomNav, Header, Sidebar} from "components";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Header />
+      <Sidebar />
+      <AllRoutes />
+      <BottomNav />
+
     </div>
   );
 }
