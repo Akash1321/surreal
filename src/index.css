@@ -8,6 +8,7 @@
   --clr-primary: var(--clr-white);
   --clr-background: #000000;
   --clr-accent: #6F46A9;
+  --clr-neutral: #999999;
 
   --ff-primary: 'Lato', sans-serif;
 
@@ -112,6 +113,7 @@ body{
 
 button{
   border: none;
+  cursor: pointer;
 }
 
 

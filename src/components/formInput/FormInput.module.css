@@ -1,0 +1,10 @@
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.required{
+    font-size: 1.5rem;
+    color: lightcoral;
+}
