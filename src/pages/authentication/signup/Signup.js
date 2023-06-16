@@ -6,7 +6,7 @@ import { useAuth } from "context/AuthContext";
 import { FormInput } from "components";
 import authStyles from "pages/authentication/auth.module.css";
 
-const Login = () => {
+const Signup = () => {
   const [inputValues, setInputValues] = useState({
     username: "",
     password: "",
@@ -16,7 +16,15 @@ const Login = () => {
 
   const loginInputs = [
     {
-      id: 1,
+        id: 1,
+        name: "name",
+        placeholder: "Enter Name",
+        type: "text",
+        label: "Name",
+        required: true,
+      },
+    {
+      id: 2,
       name: "username",
       placeholder: "Enter Username",
       type: "text",
@@ -25,13 +33,22 @@ const Login = () => {
     },
 
     {
-      id: 2,
+      id: 4,
       name: "password",
       placeholder: "Enter Password",
       type: "password",
       label: "Password",
       required: true,
     },
+
+    {
+        id: 5,
+        name: "confirmPassword",
+        placeholder: "Enter Confirm Password",
+        type: "password",
+        label: "Confirm Password",
+        required: true,
+      },
   ];
 
   const onChange = (e) => {
@@ -40,10 +57,6 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
-  const handleGuestLogin = () => {
-    setInputValues({username: "adarshbalika", password: "adarshBalika123"})
-  }
 
   const handleLoginForm = (e) => {
     e.preventDefault();
@@ -55,7 +68,7 @@ const Login = () => {
   return (
     <div className={authStyles.authContainer}>
       <main>
-        <h1 className={authStyles.heading}>Login</h1>
+        <h1 className={authStyles.heading}>Create Profile</h1>
         <form onSubmit={handleLoginForm} className={authStyles.form}>
           {loginInputs.map((input) => (
             <FormInput
@@ -65,16 +78,13 @@ const Login = () => {
               onChange={onChange}
             />
           ))}
-          <button className={authStyles.button}>LOGIN</button>
-          <button className={`${authStyles.guestButton} ${authStyles.button}`} onClick={handleGuestLogin}>
-            LOGIN AS GUEST
-          </button>
+          <button className={authStyles.button}>CREATE</button>
         </form>
 
-        <p className={authStyles.link}>Don't have an account? <Link to="/signup"> Register</Link></p>
+        <p className={authStyles.link}>Already have an account? <Link to="/login"> Login</Link></p>
       </main>
     </div>
   );
 };
 
-export { Login };
+export { Signup };

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Bookmarks, Explore, Home, Login } from "pages";
+import { Bookmarks, Explore, Home, Login, Signup } from "pages";
 import RequiresAuth from "./RequiresAuth";
 
 const AllRoutes = () => {
@@ -35,6 +35,7 @@ const AllRoutes = () => {
             />
             
             <Route path="/login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
         </Routes>
     );
 };
