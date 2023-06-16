@@ -1,10 +1,13 @@
-import loginImage from "assets/loginImage.png";
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
 
 import { useAuth } from "context/AuthContext";
-import { useState } from "react";
-import authStyles from "pages/authentication/auth.module.css";
 import { FormInput } from "components";
-import { Link } from "react-router-dom";
+import authStyles from "pages/authentication/auth.module.css";
+
+
+
 
 const Login = () => {
   const [inputValues, setInputValues] = useState({
