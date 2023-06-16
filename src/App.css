@@ -3,3 +3,11 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+
+.content-container{
+    border: 1px solid red;
+    margin-left: 22vw;
+    margin-top: 1rem;
+    width: fit-content;
+}
