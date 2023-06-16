@@ -8,11 +8,13 @@ import authStyles from "pages/authentication/auth.module.css";
 
 const Signup = () => {
   const [inputValues, setInputValues] = useState({
+    name: "",
     username: "",
     password: "",
+    confirmPassword: ""
   });
 
-  const { handleUserLogin } = useAuth();
+  const { handleUserSignup } = useAuth();
 
   const loginInputs = [
     {
@@ -33,7 +35,7 @@ const Signup = () => {
     },
 
     {
-      id: 4,
+      id: 3,
       name: "password",
       placeholder: "Enter Password",
       type: "password",
@@ -42,7 +44,7 @@ const Signup = () => {
     },
 
     {
-        id: 5,
+        id: 4,
         name: "confirmPassword",
         placeholder: "Enter Confirm Password",
         type: "password",
@@ -61,8 +63,8 @@ const Signup = () => {
   const handleLoginForm = (e) => {
     e.preventDefault();
 
-    const { username, password } = inputValues;
-    handleUserLogin(username, password);
+    const { name, username, password } = inputValues;
+    handleUserSignup(name, username, password);
   };
 
   return (
