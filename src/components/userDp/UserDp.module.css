@@ -1,0 +1,10 @@
+.dpContainer{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image{
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+}
