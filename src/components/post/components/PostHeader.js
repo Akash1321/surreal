@@ -10,7 +10,7 @@ const PostHeader = ({username, createdAt}) => {
     const {userState: {allUsers}} = useUser();
 
     const user = allUsers?.find(detail => detail.username === username) ?? {};
-    const {_id, name, dpUrl} = user;
+    const {name, dpUrl} = user;
 
     const event = new Date(createdAt)
     const timeOfPosting = event.toDateString().split(" ").slice(1, 4).join(" ")
