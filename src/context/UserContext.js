@@ -38,7 +38,6 @@ export const UserProvider = ({children}) => {
         handleAllUsers()
     }, [])
 
-    console.log(userState.allUsers)
 
     return (
         <UserContext.Provider value={{userState}}>
