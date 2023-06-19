@@ -8,6 +8,10 @@ const getAllPosts = () => {
     return axios.get("api/posts");
 }
 
+const getPostService = (id) => {
+    return axios.get(`/api/posts/${id}`)
+}
+
 //likes
 
 const likePostService = (id) => {
@@ -49,4 +53,4 @@ const bookmarkRemoveService = (id) => {
 }
 
 
-export {getAllPosts, likePostService, dislikePostService, getAllBookmarks, bookmarkPostService, bookmarkRemoveService}
+export {getAllPosts, getPostService ,likePostService, dislikePostService, getAllBookmarks, bookmarkPostService, bookmarkRemoveService}
