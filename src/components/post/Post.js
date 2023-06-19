@@ -1,6 +1,7 @@
 import PostStyles from "./Post.module.css";
 import { PostHeader } from "./components/PostHeader";
 import { PostInteraction } from "./components/PostInteraction";
+import { useNavigate } from "react-router-dom";
 
 const Post = ({
   _id,
@@ -12,8 +13,15 @@ const Post = ({
   createdAt,
   updatedAt,
 }) => {
+
+  const navigate = useNavigate();
+
+  const handlePostClick = () => {
+    navigate(`/post/${_id}`)
+  }
+
   return (
-    <li className={PostStyles.postContainer}>
+    <li className={PostStyles.postContainer} onClick={handlePostClick}>
       <PostHeader username={username} createdAt={createdAt} />
 
       <div className={PostStyles.contentBox}>
