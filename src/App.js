@@ -1,6 +1,6 @@
 
 import './App.css';
-import {BottomNav, Header, Sidebar} from "components";
+import {BottomNav, Sidebar} from "components";
 import { useAuth } from 'context/AuthContext';
 import AllRoutes from 'Routes/AllRoutes';
 
@@ -12,7 +12,6 @@ function App() {
 
       {token && (
         <>
-        <Header />
         <Sidebar />
         <BottomNav />
         </>

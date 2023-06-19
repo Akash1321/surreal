@@ -4,10 +4,23 @@
     justify-content: flex-start;
 }
 
+.feed{
+    gap: 1rem;
+}
+
 
 .content-container{
     border: 1px solid red;
-    margin-left: 22vw;
+    margin-left: 0;
     margin-top: 1rem;
-    width: fit-content;
+    width: 100%;
+    padding-inline: 1rem;
+}
+
+
+@media(min-width: 50em){
+    .content-container{
+        margin-left: 22vw;
+        max-width: 60vw;
+    }
 }

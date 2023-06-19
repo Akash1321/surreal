@@ -1,9 +1,12 @@
 .bottomNav{
-    width: 100%;
+    width: 100vw;
     padding: 1rem;
     display: block;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--clr-background);
 }
 
 .active{

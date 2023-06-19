@@ -8,8 +8,7 @@ import { formatDate } from "../utils/authUtils";
 export const users = [
   {
     _id: "t7cZfWIp-q",
-    firstName: "Adarsh",
-    lastName: "Balika",
+    name: "Adarsh Balika",
     username: "adarshbalika",
     password: "adarshBalika123",
     bio: "Be yourself!",
@@ -22,8 +21,7 @@ export const users = [
   },
   {
     _id: "79Gksh9otl",
-    firstName: "John",
-    lastName: "Doe",
+    name: "John Doe",
     username: "johndoe",
     password: "johndoe123",
     bio: "Hello World",
@@ -36,8 +34,7 @@ export const users = [
   },
   {
     _id: "1T6Be1QpLm",
-    firstName: "Jane",
-    lastName: "Doe",
+    name: "Jane Doe",
     username: "janedoe",
     password: "janedoe123",
     bio: "Whats in bio?",
@@ -50,8 +47,7 @@ export const users = [
   },
   {
     _id: "LCrc9f0Zl0",
-    firstName: "Carl",
-    lastName: "Smith",
+    name: "Carl Smith",
     username: "carlsmith",
     password: "carlsmith123",
     bio: "Whats in bio?",
@@ -64,8 +60,7 @@ export const users = [
 
   {
     _id: "o5gzWjEeX_",
-    firstName: "Roma",
-    lastName: "Bulani",
+    name: "Roma Bulani",
     username: "romabulani",
     password: "romabulani123",
     bio: "Aspiring Frontend Engineer",
@@ -79,8 +74,7 @@ export const users = [
 
   {
     _id: "M1NR81Bzlz",
-    firstName: "Alex",
-    lastName: "Maxwell",
+    name: "Alex Maxwell",
     username: "alexmaxwell",
     password: "alexmaxwell123",
     bio: "What's up?",
@@ -94,8 +88,7 @@ export const users = [
 
   {
     _id: "qq8zWjEeXd",
-    firstName: "Sophia",
-    lastName: "Jones",
+    name: "Sophia Jones",
     username: "sophiajones",
     password: "sophiajones123",
     bio: "Frontend Engineer",

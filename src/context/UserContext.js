@@ -28,7 +28,6 @@ export const UserProvider = ({children}) => {
             const {status, data: {users}} = await getAllUsers();
             if(status === 200){
                 userDispatch({type: "ALL_USERS", payload: users});
-                console.log(users)
             }
         }catch(error){
             console.log(error);
@@ -38,6 +37,8 @@ export const UserProvider = ({children}) => {
     useEffect(() => {
         handleAllUsers()
     }, [])
+
+    console.log(userState.allUsers)
 
     return (
         <UserContext.Provider value={{userState}}>
