@@ -25,7 +25,7 @@ const PostHeader = ({username, createdAt}) => {
                 <p className={PostStyles.username}>@{username}</p>
             </div>
             <p className={PostStyles.time}>{timeOfPosting}</p>
-            {checkProfile && <MoreHorizontal className={PostStyles.more}/>}
+            {checkProfile && <button className={PostStyles.more}><MoreHorizontal /></button>}
         </div>
     )
 }

@@ -37,6 +37,8 @@
 .more{
     margin-left: auto;
     align-self: flex-start;
+    background: none;
+    color: var(--clr-primary);
 }
 
 .contentBox{
