@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const {token} = JSON.parse(localStorage.getItem("authStorage"));
+const userInfo = JSON.parse(localStorage.getItem("authStorage"));
+const token = userInfo?.token || "";
 
 //posts
 
