@@ -1,23 +1,37 @@
+import { useState } from "react";
 import PostStyles from "./Post.module.css";
 import { PostHeader } from "./components/PostHeader";
 import { PostInteraction } from "./components/PostInteraction";
 import { useNavigate } from "react-router-dom";
+import { usePosts } from "context/PostsContext";
+import { FormInput } from "components/formInput/FormInput";
 
 const Post = ({
   _id,
   content,
-  mediaURL: { image, video },
+  mediaURL,
   likes,
   comments,
   username,
   createdAt,
   updatedAt,
 }) => {
+  const [addCommentView, setAddCommentView] = useState(false);
 
+  const { handleGetPost } = usePosts();
   const navigate = useNavigate();
 
   const handlePostClick = () => {
-    navigate(`/post/${_id}`)
+    navigate(`/post/${_id}`);
+    handleGetPost(_id);
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const handleInputContainer = (e) => {
+    e.stopPropagation();
   }
 
   return (
@@ -26,11 +40,31 @@ const Post = ({
 
       <div className={PostStyles.contentBox}>
         <p>{content}</p>
-        {image && <img src={image} alt="user uploads" />}
-        {video && <video controls><source src={video} /></video>}
+        {mediaURL?.image && <img src={mediaURL?.image} alt="user uploads" />}
+        {mediaURL?.video && (
+          <video controls>
+            <source src={mediaURL?.video} />
+          </video>
+        )}
       </div>
 
-      <PostInteraction id={_id} likes={likes} comments={comments} />
+      <PostInteraction id={_id} likes={likes} comments={comments} setAddCommentView={setAddCommentView}/>
+
+      {addCommentView && (
+        <form onSubmit={handleCommentSubmit} className={PostStyles.commentForm}>
+        <div className={PostStyles.inputContainer} onClick={handleInputContainer}>
+          <FormInput
+            type="text"
+            name="comment"
+            placeholder="Add a comment..."
+            required
+            nolabel
+          />
+        </div>
+
+        <button className={PostStyles.post}>POST</button>
+      </form>
+      )}
 
     </li>
   );

@@ -4,7 +4,7 @@ import PostStyles from "components/post/Post.module.css";
 import { useAuth } from "context/AuthContext";
 import { MoreHorizontal } from "react-feather";
 
-const PostHeader = ({username, createdAt}) => {
+const PostHeader = ({username, createdAt, detail}) => {
 
     const {userInfo} = useAuth();
     const {userState: {allUsers}} = useUser();
@@ -24,7 +24,7 @@ const PostHeader = ({username, createdAt}) => {
                 <p className={PostStyles.name}>{name}</p>
                 <p className={PostStyles.username}>@{username}</p>
             </div>
-            <p className={PostStyles.time}>{timeOfPosting}</p>
+            {!detail && <p className={PostStyles.time}>{timeOfPosting}</p>}
             {checkProfile && <button className={PostStyles.more}><MoreHorizontal /></button>}
         </div>
     )

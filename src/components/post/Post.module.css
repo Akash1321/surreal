@@ -85,6 +85,36 @@
     color: var(--clr-accent);
 }
 
+.commentForm{
+    width: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputContainer{
+    flex-grow: 1;
+}
+
+.inputContainer input{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-background);
+    color: var(--clr-primary);
+    font-weight: var(--fw-light);
+    border: none;
+}
+
+.inputContainer input:focus{
+   outline: none;
+}
+
+.post{
+    padding: 0.5rem;
+    background: none;
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
 
 @media(min-width:  50em){
     .postContainer{
