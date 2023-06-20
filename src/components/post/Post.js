@@ -30,7 +30,6 @@ const Post = ({
     e.preventDefault();
     const form = e.target;
     const commentInput = form.comment.value;
-    console.log(commentInput);
 
     handleAddComment(_id, commentInput)
   };
