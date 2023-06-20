@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
 import {
+  addCommentService,
   bookmarkPostService,
   bookmarkRemoveService,
   dislikePostService,
@@ -150,6 +151,18 @@ export const PostsProvider = ({ children }) => {
     }
   };
 
+  const handleAddComment = async (id, comment) => {
+    try{
+      const {status, data: {posts}} = await addCommentService(id, comment);
+
+      if(status === 201){
+        postsDispatch({type: "ALL_POSTS", payload: posts})
+      }
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <PostsContext.Provider
       value={{
@@ -159,6 +172,7 @@ export const PostsProvider = ({ children }) => {
         handlePostDislike,
         handlePostBookmark,
         handleRemoveBookmark,
+        handleAddComment
       }}
     >
       {children}

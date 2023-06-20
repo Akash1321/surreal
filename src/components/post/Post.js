@@ -18,7 +18,7 @@ const Post = ({
 }) => {
   const [addCommentView, setAddCommentView] = useState(false);
 
-  const { handleGetPost } = usePosts();
+  const { handleGetPost, handleAddComment } = usePosts();
   const navigate = useNavigate();
 
   const handlePostClick = () => {
@@ -28,9 +28,18 @@ const Post = ({
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const commentInput = form.comment.value;
+    console.log(commentInput);
+
+    handleAddComment(_id, commentInput)
   };
 
   const handleInputContainer = (e) => {
+    e.stopPropagation();
+  }
+
+  const handleCommentPost =(e) => {
     e.stopPropagation();
   }
 
@@ -62,7 +71,7 @@ const Post = ({
           />
         </div>
 
-        <button className={PostStyles.post}>POST</button>
+        <button className={PostStyles.post} onClick={handleCommentPost}>POST</button>
       </form>
       )}
 
