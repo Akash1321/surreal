@@ -2,8 +2,12 @@ import { Home, Compass, Bookmark, Search } from "react-feather";
 import { NavLink } from "react-router-dom";
 
 import SidebarStyles from "./Sidebar.module.css";
+import { UserDp } from "components/userDp/UserDp";
+import { useAuth } from "context/AuthContext";
 
 const Sidebar = () => {
+  const { userInfo } = useAuth();
+  const { dpUrl, username } = userInfo;
 
   const styleActive = ({ isActive }) =>
     isActive ? `${SidebarStyles.active}` : "";
@@ -30,6 +34,18 @@ const Sidebar = () => {
         <li className={SidebarStyles.listItem}>
           <NavLink to="/bookmarks" className={styleActive}>
             <Bookmark className={SidebarStyles.icons} /> Bookmark
+          </NavLink>
+        </li>
+
+        <li className={SidebarStyles.listItem}>
+          <NavLink to="/profile" className={styleActive}>
+            <UserDp
+              dpUrl={dpUrl}
+              username={username}
+              dimensions={SidebarStyles.dp}
+              className={SidebarStyles.icons}
+            />{" "}
+            Profile
           </NavLink>
         </li>
       </ul>
