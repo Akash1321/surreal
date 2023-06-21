@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Bookmarks, Explore, Home, Login, PostDetail, Signup } from "pages";
+import { Bookmarks, Explore, Home, Login, PostDetail, Profile, Signup } from "pages";
 import RequiresAuth from "./RequiresAuth";
 
 const AllRoutes = () => {
@@ -11,7 +11,7 @@ const AllRoutes = () => {
                 path="/"
                 element={
                     <RequiresAuth>
-                        <Home />
+                        <Home /> 
                     </RequiresAuth>
                 }
             />
@@ -37,6 +37,7 @@ const AllRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/post/:postId" element={<PostDetail />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
     );
 };
