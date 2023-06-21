@@ -31,7 +31,8 @@ const Post = ({
     const form = e.target;
     const commentInput = form.comment.value;
 
-    handleAddComment(_id, commentInput)
+    handleAddComment(_id, commentInput);
+    form.reset()
   };
 
   const handleInputContainer = (e) => {
