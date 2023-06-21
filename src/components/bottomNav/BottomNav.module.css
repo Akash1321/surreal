@@ -17,11 +17,17 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-inline: 1rem;
 }
 
 .listItem a{
     color: var(--clr-primary);
+}
+
+.dp{
+    width: 2rem;
+    height: 2rem;
 }
 
 .create{
