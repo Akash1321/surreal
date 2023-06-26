@@ -15,7 +15,7 @@ export const users = [
     bookmarks: [],
     dpUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651473734/socialmedia/avatars/adarsh-balika_dct6gm.webp",
-    website: "https://romabulani.netlify.app/",
+    website: "https://fret-house.vercel.app/",
     createdAt: "2022-01-01T10:55:06+05:30",
     updatedAt: formatDate(),
   },
