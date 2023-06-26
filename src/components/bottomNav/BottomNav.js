@@ -39,7 +39,7 @@ const BottomNav = () => {
           </li>
 
           <li className={NavStyles.listItem}>
-            <NavLink to="/profile" className={styleActive}>
+            <NavLink to={`/profile/${username}`} className={styleActive}>
               <UserDp dpUrl={dpUrl} username={username} dimensions={NavStyles.dp} className={NavStyles.icons} />
             </NavLink>
           </li>

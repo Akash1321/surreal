@@ -1,0 +1,55 @@
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100vw;
+    padding: 0.5rem;
+}
+
+.dp{
+    width: 5rem;
+    height: 5rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-self: flex-start;
+}
+
+.editProfile{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-background);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+}
+
+.info{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bio{
+    font-weight: var(--fw-light);
+}
+
+.name{
+    font-weight: var(--fw-bold);
+}
+
+.username{
+    color: var(--clr-neutral);
+}
+
+
+
+@media(min-width: 50em){
+    .details{
+        max-width: 33rem;
+    }
+}

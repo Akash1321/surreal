@@ -37,7 +37,7 @@ const AllRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/post/:postId" element={<PostDetail />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:userName" element={<Profile />} />
         </Routes>
     );
 };

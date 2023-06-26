@@ -8,6 +8,7 @@ import {
   getAllBookmarks,
   getAllPosts,
   getPostService,
+  getUserPosts,
   likePostService,
 } from "services/postsServices";
 
@@ -16,6 +17,7 @@ const PostsContext = createContext();
 const initials = {
   allPosts: [],
   allBookmarks: [],
+  allUserPosts: [],
   viewPost: {},
 };
 
@@ -29,6 +31,9 @@ const postsReducer = (state, action) => {
 
     case "GET_POST":
       return { ...state, viewPost: action.payload };
+
+    case "USER_POSTS":
+      return {...state, allUserPosts: action.payload}
 
     default:
       return state;
@@ -73,6 +78,19 @@ export const PostsProvider = ({ children }) => {
   }, []);
 
   // get single post
+
+  const handleGetUserPosts = async (username) => {
+    try{
+      const {status, data : {posts}} = await getUserPosts(username);
+
+      if(status === 200){
+        postsDispatch({type: "USER_POSTS", payload: posts});
+      }
+
+    }catch(error){
+      console.log(error)
+    }
+  }
 
   const handleGetPost = async (id) => {
     try {
@@ -167,6 +185,7 @@ export const PostsProvider = ({ children }) => {
     <PostsContext.Provider
       value={{
         state,
+        handleGetUserPosts,
         handleGetPost,
         handlePostLike,
         handlePostDislike,

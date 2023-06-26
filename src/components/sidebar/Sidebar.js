@@ -38,7 +38,7 @@ const Sidebar = () => {
         </li>
 
         <li className={SidebarStyles.listItem}>
-          <NavLink to="/profile" className={styleActive}>
+          <NavLink to={`/profile/${username}`} className={styleActive}>
             <UserDp
               dpUrl={dpUrl}
               username={username}

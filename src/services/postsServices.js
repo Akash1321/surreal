@@ -13,6 +13,13 @@ const getPostService = (id) => {
   return axios.get(`/api/posts/${id}`);
 };
 
+//userPosts
+
+const getUserPosts = (username) => {
+  return axios.get(`/posts/user/${username}`)
+}
+
+
 //likes
 
 const likePostService = (id) => {
@@ -73,13 +80,18 @@ const addCommentService = (id, commentData) => {
   );
 };
 
+
+
+
 export {
   getAllPosts,
+  getUserPosts,
   getPostService,
   likePostService,
   dislikePostService,
   getAllBookmarks,
   bookmarkPostService,
   bookmarkRemoveService,
-  addCommentService
+  addCommentService,
+  
 };
