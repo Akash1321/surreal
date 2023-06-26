@@ -60,14 +60,14 @@ export const users = [
 
   {
     _id: "o5gzWjEeX_",
-    name: "Roma Bulani",
-    username: "romabulani",
-    password: "romabulani123",
+    name: "Akash Sarkar",
+    username: "akash13",
+    password: "akashSarkar123",
     bio: "Aspiring Frontend Engineer",
     bookmarks: [],
     dpUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525370/socialmedia/avatars/roma.webp",
-    website: "https://romabulani.hashnode.dev/",
+      "https://res.cloudinary.com/dnj52nahi/image/upload/v1687788706/socialMedia/Portfolio_dp_at46mp.png",
+    website: "https://akash-sarkar.netlify.app/",
     createdAt: "2022-01-04T10:55:06+05:30",
     updatedAt: formatDate(),
   },
