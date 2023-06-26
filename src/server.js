@@ -61,6 +61,7 @@ export function makeServer({ environment = "development" } = {}) {
       posts.forEach((item) => server.create("post", { ...item }));
     },
 
+
     routes() {
       this.namespace = "api";
       // auth routes (public)

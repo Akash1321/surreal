@@ -16,7 +16,7 @@ const getPostService = (id) => {
 //userPosts
 
 const getUserPosts = (username) => {
-  return axios.get(`/posts/user/${username}`)
+  return axios.get(`api/posts/user/${username}`)
 }
 
 
