@@ -1,5 +1,6 @@
 import { UserDp } from "components";
 import { useAuth } from "context/AuthContext";
+import { useUser } from "context/UserContext";
 import ProfileStyles from "pages/profile/Profile.module.css";
 import { Settings } from "react-feather";
 import { Link } from "react-router-dom";
@@ -14,10 +15,22 @@ const UserDetail = (details) => {
     allUserPosts,
     followers,
     following,
+    _id,
   } = details;
   const { userInfo } = useAuth();
+  const { handleFollowUser, handleUnfollowUser } = useUser();
 
   const checkUser = userInfo?.username === username;
+
+  const handleFollowButton = () => {
+    handleFollowUser(_id);
+  };
+
+  const handleUnfollowButton = () => {
+    handleUnfollowUser(_id);
+  };
+
+  const isFollowing = !!userInfo?.following.find(user => user._id === _id);
 
   return (
     <>
@@ -37,7 +50,23 @@ const UserDetail = (details) => {
               <Settings />
             </>
           ) : (
-            <button className={ProfileStyles.follow}>Follow</button>
+            <>
+              {isFollowing ? (
+                <button
+                  className={ProfileStyles.unfollow}
+                  onClick={handleUnfollowButton}
+                >
+                  Unfollow
+                </button>
+              ) : (
+                <button
+                  className={ProfileStyles.follow}
+                  onClick={handleFollowButton}
+                >
+                  Follow
+                </button>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -60,7 +89,7 @@ const UserDetail = (details) => {
         <button>
           {followers?.length} <span>followers</span>
         </button>
-        
+
         <button>
           {following?.length} <span>following</span>
         </button>

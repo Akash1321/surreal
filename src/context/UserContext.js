@@ -1,50 +1,99 @@
-import {createContext, useContext, useEffect, useReducer} from "react";
-import { getAllUsers } from "services/userServices";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  followUserService,
+  getAllUsers,
+  unfollowUserService,
+} from "services/userServices";
+import { useAuth } from "./AuthContext";
 
 const UserContext = createContext();
 
 const initials = {
-    allUsers: []
+  allUsers: [],
 };
 
 const userReducer = (state, action) => {
-   switch(action.type){
+  switch (action.type) {
     case "ALL_USERS":
-      return {...state, allUsers: action.payload}
+      return { ...state, allUsers: action.payload };
 
+    case "UPDATE_USER":
+      return {
+        ...state,
+        allUsers: state.allUsers?.map((user) =>
+          user._id === action.payload._id ? action.payload : user
+        ),
+      };
 
+    default:
+      return state;
+  }
+};
 
-    default: 
-      return state
-   }
-}
+export const UserProvider = ({ children }) => {
+  const [userState, userDispatch] = useReducer(userReducer, initials);
+  const { setUserInfo, token } = useAuth();
 
-export const UserProvider = ({children}) => {
-
-    const [userState, userDispatch] = useReducer(userReducer, initials);
-
-    const handleAllUsers = async () => {
-        try{
-            const {status, data: {users}} = await getAllUsers();
-            if(status === 200){
-                userDispatch({type: "ALL_USERS", payload: users});
-            }
-        }catch(error){
-            console.log(error);
-        }
+  const handleAllUsers = async () => {
+    try {
+      const {
+        status,
+        data: { users },
+      } = await getAllUsers();
+      if (status === 200) {
+        userDispatch({ type: "ALL_USERS", payload: users });
+      }
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    useEffect(() => {
-        handleAllUsers()
-    }, [])
+  useEffect(() => {
+    handleAllUsers();
+  }, []);
 
+  const handleFollowUser = async (id) => {
+    try {
+      const {
+        status,
+        data: { user, followUser },
+      } = await followUserService(id, token);
 
-    return (
-        <UserContext.Provider value={{userState}}>
-            {children}
-        </UserContext.Provider>
-    )
-}
+      if (status === 200) {
 
+        setUserInfo(user);
+        userDispatch({ type: "UPDATE_USER", payload: user });
+        userDispatch({ type: "UPDATE_USER", payload: followUser });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleUnfollowUser = async (id) => {
+    try {
+      const {
+        status,
+        data: { user, followUser },
+      } = await unfollowUserService(id, token);
+
+      if (status === 200) {
+        setUserInfo(user);
+        userDispatch({ type: "UPDATE_USER", payload: user });
+        userDispatch({ type: "UPDATE_USER", payload: followUser });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <UserContext.Provider
+      value={{ userState, handleFollowUser, handleUnfollowUser }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};
 
 export const useUser = () => useContext(UserContext);

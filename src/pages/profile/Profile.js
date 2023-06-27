@@ -16,8 +16,6 @@ const Profile = () => {
         handleGetUserPosts(userName)
     }, [userName])
 
-    console.log(userProfile);
-    console.log(allUserPosts);
     return (
         <div className="content-container">
            <UserDetail {...userProfile} allUserPosts={allUserPosts}/>
