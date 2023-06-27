@@ -72,13 +72,6 @@ export const PostsProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    handleAllPosts();
-    handleAllBookmarks();
-  }, []);
-
-  // get single post
-
   const handleGetUserPosts = async (username) => {
     try{
       const {status, data : {posts}} = await getUserPosts(username);
@@ -91,6 +84,15 @@ export const PostsProvider = ({ children }) => {
       console.log(error)
     }
   }
+
+  useEffect(() => {
+    handleAllPosts();
+    handleAllBookmarks();
+  }, []);
+
+  // get single post
+
+  
 
   const handleGetPost = async (id) => {
     try {

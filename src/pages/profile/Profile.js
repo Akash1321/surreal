@@ -13,7 +13,7 @@ const Profile = () => {
 
     useEffect(() => {
         handleGetUserPosts(userName)
-    }, [handleGetUserPosts, userName])
+    }, [userName])
 
     console.log(userProfile);
     console.log(allUserPosts);

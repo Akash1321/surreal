@@ -6,7 +6,7 @@ const token = userInfo?.token || "";
 //posts
 
 const getAllPosts = () => {
-  return axios.get("api/posts");
+  return axios.get("/api/posts");
 };
 
 const getPostService = (id) => {
@@ -16,7 +16,7 @@ const getPostService = (id) => {
 //userPosts
 
 const getUserPosts = (username) => {
-  return axios.get(`api/posts/user/${username}`)
+  return axios.get(`/api/posts/user/${username}`)
 }
 
 
@@ -24,7 +24,7 @@ const getUserPosts = (username) => {
 
 const likePostService = (id) => {
   return axios.post(
-    `api/posts/like/${id}`,
+    `/api/posts/like/${id}`,
     {},
     {
       headers: { authorization: token },
@@ -34,7 +34,7 @@ const likePostService = (id) => {
 
 const dislikePostService = (id) => {
   return axios.post(
-    `api/posts/dislike/${id}`,
+    `/api/posts/dislike/${id}`,
     {},
     {
       headers: { authorization: token },
@@ -45,12 +45,12 @@ const dislikePostService = (id) => {
 //bookmarks
 
 const getAllBookmarks = () => {
-  return axios.get("api/users/");
+  return axios.get("/api/users/");
 };
 
 const bookmarkPostService = (id) => {
   return axios.post(
-    `api/users/bookmark/${id}`,
+    `/api/users/bookmark/${id}`,
     {},
     {
       headers: { authorization: token },
@@ -60,7 +60,7 @@ const bookmarkPostService = (id) => {
 
 const bookmarkRemoveService = (id) => {
   return axios.post(
-    `api/users/remove-bookmark/${id}`,
+    `/api/users/remove-bookmark/${id}`,
     {},
     {
       headers: { authorization: token },
@@ -72,7 +72,7 @@ const bookmarkRemoveService = (id) => {
 
 const addCommentService = (id, commentData) => {
   return axios.post(
-    `api/comments/add/${id}`,
+    `/api/comments/add/${id}`,
     { commentData },
     {
       headers: { authorization: token },
