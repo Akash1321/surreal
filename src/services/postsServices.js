@@ -1,8 +1,5 @@
 import axios from "axios";
 
-const authDetail = JSON.parse(localStorage.getItem("authStorage"));
-const token = authDetail?.token || "";
-
 //posts
 
 const getAllPosts = () => {
@@ -22,7 +19,7 @@ const getUserPosts = (username) => {
 
 //likes
 
-const likePostService = (id) => {
+const likePostService = (id, token) => {
   return axios.post(
     `/api/posts/like/${id}`,
     {},
@@ -32,7 +29,7 @@ const likePostService = (id) => {
   );
 };
 
-const dislikePostService = (id) => {
+const dislikePostService = (id, token) => {
   return axios.post(
     `/api/posts/dislike/${id}`,
     {},
@@ -48,7 +45,7 @@ const getAllBookmarks = () => {
   return axios.get("/api/users/");
 };
 
-const bookmarkPostService = (id) => {
+const bookmarkPostService = (id, token) => {
   return axios.post(
     `/api/users/bookmark/${id}`,
     {},
@@ -58,7 +55,7 @@ const bookmarkPostService = (id) => {
   );
 };
 
-const bookmarkRemoveService = (id) => {
+const bookmarkRemoveService = (id, token) => {
   return axios.post(
     `/api/users/remove-bookmark/${id}`,
     {},
@@ -70,7 +67,7 @@ const bookmarkRemoveService = (id) => {
 
 // comments
 
-const addCommentService = (id, commentData) => {
+const addCommentService = (id, commentData, token) => {
   return axios.post(
     `/api/comments/add/${id}`,
     { commentData },

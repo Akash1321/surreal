@@ -11,6 +11,7 @@ import {
   getUserPosts,
   likePostService,
 } from "services/postsServices";
+import { useAuth } from "./AuthContext";
 
 const PostsContext = createContext();
 
@@ -42,6 +43,7 @@ const postsReducer = (state, action) => {
 
 export const PostsProvider = ({ children }) => {
   const [state, postsDispatch] = useReducer(postsReducer, initials);
+  const {token} = useAuth();
 
   const handleAllPosts = async () => {
     try {
@@ -116,7 +118,7 @@ export const PostsProvider = ({ children }) => {
       const {
         status,
         data: { posts },
-      } = await likePostService(id);
+      } = await likePostService(id, token);
 
       if (status === 201) {
         postsDispatch({ type: "ALL_POSTS", payload: posts });
@@ -131,7 +133,7 @@ export const PostsProvider = ({ children }) => {
       const {
         status,
         data: { posts },
-      } = await dislikePostService(id);
+      } = await dislikePostService(id, token);
 
       if (status === 201) {
         postsDispatch({ type: "ALL_POSTS", payload: posts });
@@ -146,7 +148,7 @@ export const PostsProvider = ({ children }) => {
       const {
         status,
         data: { bookmarks },
-      } = await bookmarkPostService(id);
+      } = await bookmarkPostService(id, token);
 
       if (status === 200) {
         postsDispatch({ type: "ALL_BOOKMARKS", payload: bookmarks });
@@ -161,7 +163,7 @@ export const PostsProvider = ({ children }) => {
       const {
         status,
         data: { bookmarks },
-      } = await bookmarkRemoveService(id);
+      } = await bookmarkRemoveService(id, token);
 
       if (status === 200) {
         postsDispatch({ type: "ALL_BOOKMARKS", payload: bookmarks });
@@ -173,7 +175,7 @@ export const PostsProvider = ({ children }) => {
 
   const handleAddComment = async (id, comment) => {
     try{
-      const {status, data: {posts}} = await addCommentService(id, comment);
+      const {status, data: {posts}} = await addCommentService(id, comment, token);
 
       if(status === 201){
         postsDispatch({type: "ALL_POSTS", payload: posts})
