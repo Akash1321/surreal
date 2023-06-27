@@ -18,12 +18,11 @@ const Post = ({
 }) => {
   const [addCommentView, setAddCommentView] = useState(false);
 
-  const { handleGetPost, handleAddComment } = usePosts();
+  const { handleAddComment } = usePosts();
   const navigate = useNavigate();
 
   const handlePostClick = () => {
     navigate(`/post/${_id}`);
-    handleGetPost(_id);
   };
 
   const handleCommentSubmit = (e) => {

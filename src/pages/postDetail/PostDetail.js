@@ -2,11 +2,18 @@ import { Post } from "components";
 import { PostHeader } from "components/post/components/PostHeader";
 import { usePosts } from "context/PostsContext";
 import DetailStyles from "pages/postDetail/PostDetail.module.css";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const PostDetail = () => {
+  const {postId} = useParams();
   const {
-    state: { viewPost },
+    state: { viewPost }, handleGetPost,
   } = usePosts();
+
+  useEffect(() => {
+    handleGetPost(postId)
+  }, [postId])
 
   const { likes, comments } = viewPost ?? {};
 

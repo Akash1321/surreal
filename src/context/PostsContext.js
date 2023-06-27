@@ -30,7 +30,7 @@ const postsReducer = (state, action) => {
     case "ALL_BOOKMARKS":
       return { ...state, allBookmarks: action.payload };
 
-    case "GET_POST":
+    case "SINGLE_POST":
       return { ...state, viewPost: action.payload };
 
     case "USER_POSTS":
@@ -104,7 +104,7 @@ export const PostsProvider = ({ children }) => {
       } = await getPostService(id);
 
       if (status === 200) {
-        postsDispatch({ type: "GET_POST", payload: post });
+        postsDispatch({ type: "SINGLE_POST", payload: post });
       }
     } catch (error) {
       console.log(error);
@@ -185,6 +185,7 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
+  console.log(state.viewPost);
   return (
     <PostsContext.Provider
       value={{
