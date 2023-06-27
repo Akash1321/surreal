@@ -1,11 +1,10 @@
 .sidebar{
     padding: 1rem;
     position: fixed;
-    left: 0;
+    left: 4rem;
     width: 20vw;
     height: 80vh;
     display: none;
-    border: 1px solid blue;
 }
 
 .listItem{

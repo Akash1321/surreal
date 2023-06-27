@@ -18,10 +18,6 @@
     padding-inline: 1rem;
 }
 
-.content-container > * {
-    margin-inline: auto;
-}
-
 
 @media(min-width: 50em){
     .content-container{
