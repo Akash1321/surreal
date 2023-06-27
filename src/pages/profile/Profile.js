@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import { UserDetail } from "./components/UserDetail";
 import { usePosts } from "context/PostsContext";
 import { useEffect } from "react";
+import { Post } from "components";
 
 const Profile = () => {
     const {userName} = useParams();
@@ -20,6 +21,12 @@ const Profile = () => {
     return (
         <div className="content-container">
            <UserDetail {...userProfile} allUserPosts={allUserPosts}/>
+
+           <ul className="flex-container feed">
+                {allUserPosts?.map(postData => (
+                    <Post key={postData._id} {...postData}/>
+                ))}
+            </ul>
         </div>
     )
 }

@@ -59,7 +59,8 @@
   border-bottom: 1px solid var(--clr-neutral);
   max-width: 100vw;
   padding: 1rem 0;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .detailHighlight > div{

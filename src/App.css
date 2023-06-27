@@ -6,6 +6,7 @@
 
 .feed{
     gap: 1rem;
+    align-items: stretch;
 }
 
 
@@ -17,10 +18,14 @@
     padding-inline: 1rem;
 }
 
+.content-container > * {
+    margin-inline: auto;
+}
+
 
 @media(min-width: 50em){
     .content-container{
-        margin-left: 22vw;
-        max-width: 60vw;
+        margin-inline: auto;
+        max-width: calc(100% - 55vw);
     }
 }

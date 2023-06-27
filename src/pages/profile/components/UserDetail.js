@@ -5,7 +5,16 @@ import { Settings } from "react-feather";
 import { Link } from "react-router-dom";
 
 const UserDetail = (details) => {
-  const { dpUrl, username, name, bio, website, allUserPosts, followers, following } = details;
+  const {
+    dpUrl,
+    username,
+    name,
+    bio,
+    website,
+    allUserPosts,
+    followers,
+    following,
+  } = details;
   const { userInfo } = useAuth();
 
   const checkUser = userInfo?.username === username;
@@ -31,11 +40,9 @@ const UserDetail = (details) => {
             <button className={ProfileStyles.follow}>Follow</button>
           )}
         </div>
-
       </div>
 
       <div className={ProfileStyles.info}>
-
         <div>
           <p className={ProfileStyles.name}>{name}</p>
           <p className={ProfileStyles.username}>@{username}</p>
@@ -43,13 +50,20 @@ const UserDetail = (details) => {
 
         <p className={ProfileStyles.bio}>{bio}</p>
         <Link to={website}>{website}</Link>
-
       </div>
 
       <div className={ProfileStyles.detailHighlight}>
-        <div>{allUserPosts?.length} <span>posts</span></div>
-        <button>{followers?.length} <span>followers</span></button>
-        <button>{following?.length} <span>following</span></button>
+        <div>
+          {allUserPosts?.length} <span>posts</span>
+        </div>
+
+        <button>
+          {followers?.length} <span>followers</span>
+        </button>
+        
+        <button>
+          {following?.length} <span>following</span>
+        </button>
       </div>
     </>
   );
