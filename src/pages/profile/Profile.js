@@ -19,7 +19,7 @@ const Profile = () => {
     console.log(allUserPosts);
     return (
         <div className="content-container">
-           <UserDetail {...userProfile}/>
+           <UserDetail {...userProfile} allUserPosts={allUserPosts}/>
         </div>
     )
 }

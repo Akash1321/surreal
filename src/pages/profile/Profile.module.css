@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
-    align-self: flex-start;
 }
 
 .editProfile{
@@ -24,6 +23,13 @@
     background-color: var(--clr-background);
     color: var(--clr-primary);
     border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+}
+
+.follow{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
     border-radius: 0.5rem;
 }
 
@@ -46,10 +52,39 @@
     color: var(--clr-neutral);
 }
 
+.detailHighlight{
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--clr-neutral);
+  border-bottom: 1px solid var(--clr-neutral);
+  max-width: 100vw;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.detailHighlight > div{
+    word-spacing: 0.3rem;
+}
+
+.detailHighlight > button{
+    display: block;
+    background: none;
+    color: var(--clr-primary);
+    word-spacing: 0.3rem;
+}
+
+.detailHighlight > div > span{
+    color: var(--clr-neutral);
+}
+
+.detailHighlight >button> span{
+    color: var(--clr-neutral);
+}
 
 
 @media(min-width: 50em){
-    .details{
+    .details, .detailHighlight{
         max-width: 33rem;
     }
+
 }
