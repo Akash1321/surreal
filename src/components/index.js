@@ -3,3 +3,4 @@ export {BottomNav} from "./bottomNav/BottomNav";
 export {FormInput} from "./formInput/FormInput";
 export {Post} from "./post/Post";
 export {UserDp} from "./userDp/UserDp";
+export {Modal} from "./modal/Modal";
