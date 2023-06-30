@@ -8,7 +8,7 @@ import { editInputs } from "utils/formInputsData";
 import {avatars} from "utils/avatarsData";
 import { useUser } from "context/UserContext";
 
-const EditProfile = ({ showModal, setShowModal }) => {
+const EditProfile = () => {
   const { userInfo } = useAuth();
   const {handleEditUser} = useUser();
   const [profileValues, setProfileValues] = useState({
