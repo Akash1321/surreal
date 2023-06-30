@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import {
+  editUserService,
   followUserService,
   getAllUsers,
   unfollowUserService,
@@ -52,6 +53,20 @@ export const UserProvider = ({ children }) => {
     handleAllUsers();
   }, []);
 
+  const handleEditUser = async (commentData) => {
+    try{
+      const {status, data: {user}} = await editUserService(commentData, token);
+
+      if(status === 201){
+        userDispatch({type: "UPDATE_USER", payload: user});
+        setUserInfo(user);
+      }
+
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   const handleFollowUser = async (id) => {
     try {
       const {
@@ -89,7 +104,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userState, handleFollowUser, handleUnfollowUser }}
+      value={{ userState, handleEditUser ,handleFollowUser, handleUnfollowUser }}
     >
       {children}
     </UserContext.Provider>

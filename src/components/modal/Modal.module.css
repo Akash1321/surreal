@@ -4,9 +4,23 @@
     right: 0;
     bottom: 0;
     top: 0;
-    background-color: aquamarine;
+    /* background-color: rgba(111, 70, 169, 0.13); */
+    backdrop-filter: blur(1px);
 }
 
 .contentBox{
-    color: black;
+    background-color: var(--clr-background);
+    color: var(--clr-primary);
+    width: fit-content;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+}
+
+.cancel{
+    margin-left: auto;
 }

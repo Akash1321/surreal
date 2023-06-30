@@ -7,9 +7,12 @@ import {
   Login,
   PostDetail,
   Profile,
+  EditProfile,
   Signup,
+
 } from "pages";
 import RequiresAuth from "./RequiresAuth";
+
 
 const AllRoutes = () => {
   return (
@@ -55,6 +58,15 @@ const AllRoutes = () => {
         element={
           <RequiresAuth>
             <Profile />
+          </RequiresAuth>
+        }
+      />
+
+<Route
+        path="/editProfile"
+        element={
+          <RequiresAuth>
+            <EditProfile />
           </RequiresAuth>
         }
       />

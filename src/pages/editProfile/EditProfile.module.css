@@ -1,0 +1,133 @@
+.header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header > h2{
+    font-size: var(--fs-500);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+.form input{
+    padding: 1rem;
+    background-color: var(--clr-background);
+    border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+    color: var(--clr-primary);
+}
+
+.form input:focus{
+    outline: none
+}
+
+.imageContainer{
+    align-self: center;
+    position: relative;
+}
+
+.dp{
+    width: 8rem;
+    height: 8rem;
+}
+
+.cameraIcon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.dpInput{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: var(--clr-background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dpInput > input{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.buttonsContainer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.selectAvatar{
+    align-self: center;
+}
+
+.avatarButton{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-background);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-accent);
+    border-radius: 0.5rem;
+}
+
+.avatarSectionHead{
+    font-weight: var(--fw-bold);
+    padding: 1rem;
+    text-align: center;
+}
+
+.avatarsContainer{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.avatarsDp{
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.discard{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-background);
+    color: var(--clr-neutral);
+    border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+}
+
+
+.save{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    border-radius: 0.5rem;
+}
+
+
+@media(min-width: 50em){
+
+    .avatarsContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .avatarsDp{
+        width: 8rem;
+        height: 8rem;
+    }
+
+}

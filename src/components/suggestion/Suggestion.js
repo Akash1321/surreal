@@ -1,5 +1,9 @@
-const Suggestion = () => {
+import { useAuth } from "context/AuthContext";
 
+
+
+const Suggestion = () => {
+     const {userInfo} = useAuth();
     
     return (
         <div>

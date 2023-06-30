@@ -7,6 +7,10 @@
 
   --clr-primary: var(--clr-white);
   --clr-background: #000000;
+
+  /* --clr-primary: #262626;
+  --clr-background: var(--clr-white); */
+
   --clr-accent: #6F46A9;
   --clr-neutral: #999999;
 
@@ -18,7 +22,7 @@
   --fw-light: 300;
 
   --fs-400: 1rem;
-  --fs-500: 2rem;
+  --fs-500: 1.5rem;
 }
 
 

@@ -3,7 +3,7 @@ import { useAuth } from "context/AuthContext";
 import { useUser } from "context/UserContext";
 import ProfileStyles from "pages/profile/Profile.module.css";
 import { Settings } from "react-feather";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserDetail = (details) => {
   const {
@@ -19,6 +19,7 @@ const UserDetail = (details) => {
   } = details;
   const { userInfo } = useAuth();
   const { handleFollowUser, handleUnfollowUser } = useUser();
+  const navigate = useNavigate();
 
   const checkUser = userInfo?.username === username;
 
@@ -29,6 +30,10 @@ const UserDetail = (details) => {
   const handleUnfollowButton = () => {
     handleUnfollowUser(_id);
   };
+
+  const handleEditProfile = () => {
+    navigate("/editProfile")
+  }
 
   const isFollowing = !!userInfo?.following.find(user => user._id === _id);
 
@@ -44,7 +49,7 @@ const UserDetail = (details) => {
         <div className={ProfileStyles.header}>
           {checkUser ? (
             <>
-              <button className={ProfileStyles.editProfile}>
+              <button className={ProfileStyles.editProfile} onClick={handleEditProfile}>
                 Edit Profile
               </button>
               <Settings />

@@ -5,3 +5,4 @@ export {Login} from "./authentication/login/Login";
 export {Signup} from "./authentication/signup/Signup";
 export {PostDetail} from "./postDetail/PostDetail";
 export {Profile} from "./profile/Profile";
+export {EditProfile} from "./editProfile/EditProfile";

@@ -1,8 +1,8 @@
+import { useEffect } from "react";
 import { useUser } from "context/UserContext";
 import {useParams} from "react-router-dom";
 import { UserDetail } from "./components/UserDetail";
 import { usePosts } from "context/PostsContext";
-import { useEffect } from "react";
 import { Post } from "components";
 
 const Profile = () => {
@@ -18,7 +18,7 @@ const Profile = () => {
 
     return (
         <div className="content-container">
-           <UserDetail {...userProfile} allUserPosts={allUserPosts}/>
+           <UserDetail {...userProfile} allUserPosts={allUserPosts} />
 
            <ul className="flex-container feed">
                 {allUserPosts?.map(postData => (
