@@ -4,6 +4,7 @@ import {
   addCommentService,
   bookmarkPostService,
   bookmarkRemoveService,
+  deletePostService,
   dislikePostService,
   getAllBookmarks,
   getAllPosts,
@@ -127,6 +128,21 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
+  //delete post
+
+  const handleDeletePost = async (id) => {
+    try{
+      const {status, data: {posts}} = await deletePostService(id, token);
+
+      if(status === 201){
+        postsDispatch({type: "ALL_POSTS", payload: posts})
+      }
+
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   //post interaction api calls
 
   const handlePostLike = async (id) => {
@@ -209,6 +225,7 @@ export const PostsProvider = ({ children }) => {
         handleGetUserPosts,
         handleGetPost,
         handleUploadPost,
+        handleDeletePost,
         handlePostLike,
         handlePostDislike,
         handlePostBookmark,

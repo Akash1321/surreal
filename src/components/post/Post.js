@@ -44,7 +44,7 @@ const Post = ({
 
   return (
     <li className={PostStyles.postContainer} onClick={handlePostClick}>
-      <PostHeader username={username} createdAt={createdAt} />
+      <PostHeader id={_id} username={username} createdAt={createdAt} />
 
       <div className={PostStyles.contentBox}>
         <p>{content}</p>

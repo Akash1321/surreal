@@ -13,20 +13,29 @@ const getPostService = (id) => {
 //userPosts
 
 const getUserPosts = (username) => {
-  return axios.get(`/api/posts/user/${username}`)
-}
-
+  return axios.get(`/api/posts/user/${username}`);
+};
 
 //add Posts
 
 const uploadPostService = (postData, token) => {
-  return axios.post("/api/posts", 
-  {postData},
-  {
-    headers: { authorization: token },
-  }
-  )
-}
+  return axios.post(
+    "/api/posts",
+    { postData },
+    {
+      headers: { authorization: token },
+    }
+  );
+};
+
+const deletePostService = (id, token) => {
+  return axios.delete(
+    `/api/posts/${id}`,
+    {
+      headers: { authorization: token },
+    }
+  );
+};
 
 //likes
 
@@ -88,19 +97,16 @@ const addCommentService = (id, commentData, token) => {
   );
 };
 
-
-
-
 export {
   getAllPosts,
   getUserPosts,
   getPostService,
   uploadPostService,
+  deletePostService,
   likePostService,
   dislikePostService,
   getAllBookmarks,
   bookmarkPostService,
   bookmarkRemoveService,
   addCommentService,
-  
 };

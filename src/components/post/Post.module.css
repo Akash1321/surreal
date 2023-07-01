@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
 
 }
 
@@ -39,6 +40,30 @@
     align-self: flex-start;
     background: none;
     color: var(--clr-primary);
+}
+
+.showMore{
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--clr-neutral);
+    background-color: var(--clr-background);
+}
+
+.showMore > button{
+    background: none;
+    color: var(--clr-primary);
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.showMore > button:hover{
+    color: var(--clr-accent);
 }
 
 .contentBox{

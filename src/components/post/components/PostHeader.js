@@ -4,11 +4,14 @@ import PostStyles from "components/post/Post.module.css";
 import { useAuth } from "context/AuthContext";
 import { MoreHorizontal } from "react-feather";
 import {useNavigate} from 'react-router-dom';
+import { useState } from "react";
+import { usePosts } from "context/PostsContext";
 
-const PostHeader = ({username, createdAt, detail}) => {
-
+const PostHeader = ({id, username, createdAt, detail}) => {
+    const [showMore, setShowMore] = useState(false);
     const {userInfo} = useAuth();
     const {userState: {allUsers}} = useUser();
+    const {handleDeletePost} = usePosts();
     const navigate = useNavigate();
 
     const user = allUsers?.find(detail => detail.username === username) ?? {};
@@ -19,9 +22,19 @@ const PostHeader = ({username, createdAt, detail}) => {
 
     const checkProfile = userInfo?.username === username;
 
+    const handleShowMore = (e) => {
+        e.stopPropagation()
+        setShowMore(prev => !prev)
+    }
+
     const handleVisitProfile = (e) => {
         e.stopPropagation();
-        navigate(`/profile/${username}`)
+        navigate(`/profile/${username}`);
+    }
+
+    const handleDeleteClick = (e) => {
+        e.stopPropagation();
+        handleDeletePost(id);
     }
 
     return (
@@ -32,7 +45,11 @@ const PostHeader = ({username, createdAt, detail}) => {
                 <p className={PostStyles.username}>@{username}</p>
             </div>
             {!detail && <p className={PostStyles.time}>{timeOfPosting}</p>}
-            {checkProfile && <button className={PostStyles.more}><MoreHorizontal /></button>}
+            {checkProfile && <button className={PostStyles.more} onClick={handleShowMore}><MoreHorizontal /></button>}
+            {showMore && <div className={PostStyles.showMore}>
+                <button>Edit</button>
+                <button onClick={handleDeleteClick}>Delete</button>
+                </div>}
         </div>
     )
 }
