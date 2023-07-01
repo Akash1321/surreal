@@ -1,10 +1,12 @@
 
 import './App.css';
-import {BottomNav, Sidebar} from "components";
+import {BottomNav, CreatePost, Sidebar} from "components";
 import { useAuth } from 'context/AuthContext';
 import AllRoutes from 'Routes/AllRoutes';
+import {useState} from "react";
 
 function App() {
+  const [showCreatePost, setShowCreatePost] = useState(false);
 
   const {token} = useAuth();
   return (
@@ -12,8 +14,9 @@ function App() {
 
       {token && (
         <>
-        <Sidebar />
-        <BottomNav />
+        <Sidebar setShowCreatePost={setShowCreatePost}/>
+        <BottomNav setShowCreatePost={setShowCreatePost}/>
+        {showCreatePost && <CreatePost setShowCreatePost={setShowCreatePost}/>}
         </>
       )}
 

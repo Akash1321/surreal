@@ -9,7 +9,7 @@ export const posts = [
   {
     _id: "xhzTkUi2Nt",
     content: "Nice Weather Today!!",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -37,7 +37,7 @@ export const posts = [
   {
     _id: "siFFxfYI1s",
     content: "Started my Baking journey! Look what I made.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: "https://res.cloudinary.com/dtrjdcrme/video/upload/v1652188886/upload-socialmedia/oikev6eomsgahnvxcijd.mp4"
@@ -55,7 +55,7 @@ export const posts = [
   {
     _id: "3XHvLP1fg",
     content: "I made this cake for my friend's birthday. Check it out",
-    mediaURL:
+    mediaUrl:
     {
       image: "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652188492/upload-socialmedia/cakegif_q11mfm.webp",
       video: ""
@@ -84,7 +84,7 @@ export const posts = [
     _id: "MTYtVhecCj",
     content:
       "You are never too old to set another goal or to dream a new dream.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -102,7 +102,7 @@ export const posts = [
   {
     _id: "3XHvLP9kC",
     content: "Yayy! Its my Birthday Today. Made this cake for myself!",
-    mediaURL:
+    mediaUrl:
     {
       image: "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014336/ecommerce/chocolatecake4.webp",
       video: ""
@@ -140,7 +140,7 @@ export const posts = [
     _id: "tHaThLyFQh",
     content:
       "Life has got all those twists and turns. You’ve got to hold on tight and off you go.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -158,7 +158,7 @@ export const posts = [
   {
     _id: "G-Gi3lSZP9",
     content: "When you have a dream, you’ve got to grab it and never let go.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -177,7 +177,7 @@ export const posts = [
     _id: "GeMUAdi9mh",
     content:
       "No matter what people tell you, words and ideas can change the world.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -195,7 +195,7 @@ export const posts = [
   {
     _id: "IyUlYXTrzZ",
     content: "Who's up for Pineapple Pastry?",
-    mediaURL:
+    mediaUrl:
     {
       image: "https://res.cloudinary.com/dtrjdcrme/image/upload/v1647014828/ecommerce/pineapplemuffin1.webp",
       video: ""
@@ -224,7 +224,7 @@ export const posts = [
     _id: "Ie92xOSVeU",
     content:
       "Check out this amazing video from BakinZone https://bakinzone.netlify.app/videos/qtlhdIfojmc",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -252,7 +252,7 @@ export const posts = [
   {
     _id: "xhzTkUyfNt",
     content: "Believe in yourself! Rest all will fall in place.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -281,7 +281,7 @@ export const posts = [
     _id: "CCmJpDnnQQ",
     content:
       "You can get everything in life you want if you will just help enough other people get what they want.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -301,7 +301,7 @@ export const posts = [
     _id: "Z_TZT_3EAw",
     content:
       "If you believe something needs to exist, if it's something you want to use yourself, don't let anyone ever stop you from doing it.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -320,7 +320,7 @@ export const posts = [
   {
     _id: "e-knMEsoLq",
     content: "More is lost by indecision than wrong decision.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -340,7 +340,7 @@ export const posts = [
     _id: "VY14RsXC7G",
     content:
       "The reason we struggle with insecurity is because we compare our behind-the-scenes with everyone else’s highlight reel.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -359,7 +359,7 @@ export const posts = [
   {
     _id: "l9pedEMjZS",
     content: "If you don’t risk anything, you risk even more.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -378,7 +378,7 @@ export const posts = [
   {
     _id: "lbW4dlCpNC",
     content: "If it makes you nervous, you’re doing it right.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -398,7 +398,7 @@ export const posts = [
     _id: "k-Vwd2d7Vt",
     content:
       "I learned a long time ago that there is something worse than missing the goal, and that’s not pulling the trigger.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -418,7 +418,7 @@ export const posts = [
     _id: "R2lAuXvK7V",
     content:
       "Success is stumbling from failure to failure with no loss of enthusiasm. Love this quote by Winston Churchill.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -438,7 +438,7 @@ export const posts = [
     _id: "G5xd30tMCR",
     content:
       "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -458,7 +458,7 @@ export const posts = [
     _id: "lF8cnfPAe9",
     content:
       "Life is like riding a bicycle. To keep your balance you must keep moving.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -478,7 +478,7 @@ export const posts = [
     _id: "stfTkUi2Nt",
     content:
       "“Do not wait for the perfect time and place to enter, for you are already onstage.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""
@@ -497,7 +497,7 @@ export const posts = [
   {
     _id: "quiTkUi2Nt",
     content: "It is a rough road that leads to the heights of greatness.",
-    mediaURL:
+    mediaUrl:
     {
       image: "",
       video: ""

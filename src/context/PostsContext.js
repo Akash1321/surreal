@@ -10,6 +10,7 @@ import {
   getPostService,
   getUserPosts,
   likePostService,
+  uploadPostService,
 } from "services/postsServices";
 import { useAuth } from "./AuthContext";
 
@@ -111,6 +112,21 @@ export const PostsProvider = ({ children }) => {
     }
   };
 
+  //upload post
+
+  const handleUploadPost  = async (postData) => {
+    try{
+      const {status, data: {posts}} = await uploadPostService(postData, token);
+
+      if(status === 201){
+        postsDispatch({type: "ALL_POSTS", payload: posts});
+      }
+
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   //post interaction api calls
 
   const handlePostLike = async (id) => {
@@ -185,13 +201,14 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
-  console.log(state.viewPost);
+  console.log(state.allPosts);
   return (
     <PostsContext.Provider
       value={{
         state,
         handleGetUserPosts,
         handleGetPost,
+        handleUploadPost,
         handlePostLike,
         handlePostDislike,
         handlePostBookmark,

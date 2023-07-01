@@ -5,7 +5,7 @@ import NavStyles from "./BottomNav.module.css";
 import { UserDp } from "components/userDp/UserDp";
 import { useAuth } from "context/AuthContext";
 
-const BottomNav = () => {
+const BottomNav = ({setShowCreatePost}) => {
 
   const {userInfo} = useAuth();
   const {dpUrl, username} = userInfo;
@@ -45,7 +45,7 @@ const BottomNav = () => {
           </li>
         </ul>
 
-        <button className={NavStyles.create}><Plus className={NavStyles.plus}/></button>
+        <button className={NavStyles.create} onClick={() => setShowCreatePost(true)}><Plus className={NavStyles.plus}/></button>
       </nav>
     );
   };

@@ -119,6 +119,12 @@ export function makeServer({ environment = "development" } = {}) {
         "/comments/downvote/:postId/:commentId",
         downvotePostCommentHandler.bind(this)
       );
+
+      this.passthrough();
+      this.passthrough(
+        "https://api.cloudinary.com/v1_1/dnj52nahi/image/upload",
+        ["post"]
+      );
     },
   });
 }

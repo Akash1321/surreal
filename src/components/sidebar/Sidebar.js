@@ -5,7 +5,7 @@ import SidebarStyles from "./Sidebar.module.css";
 import { UserDp } from "components/userDp/UserDp";
 import { useAuth } from "context/AuthContext";
 
-const Sidebar = () => {
+const Sidebar = ({setShowCreatePost}) => {
   const { userInfo } = useAuth();
   const { dpUrl, username } = userInfo;
 
@@ -50,7 +50,7 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <button className={SidebarStyles.create}>Create Post</button>
+      <button className={SidebarStyles.create} onClick={() => setShowCreatePost(true)}>Create Post</button>
     </nav>
   );
 };

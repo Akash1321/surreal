@@ -17,6 +17,17 @@ const getUserPosts = (username) => {
 }
 
 
+//add Posts
+
+const uploadPostService = (postData, token) => {
+  return axios.post("/api/posts", 
+  {postData},
+  {
+    headers: { authorization: token },
+  }
+  )
+}
+
 //likes
 
 const likePostService = (id, token) => {
@@ -84,6 +95,7 @@ export {
   getAllPosts,
   getUserPosts,
   getPostService,
+  uploadPostService,
   likePostService,
   dislikePostService,
   getAllBookmarks,

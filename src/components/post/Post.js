@@ -9,7 +9,7 @@ import { FormInput } from "components/formInput/FormInput";
 const Post = ({
   _id,
   content,
-  mediaURL,
+  mediaUrl,
   likes,
   comments,
   username,
@@ -48,10 +48,10 @@ const Post = ({
 
       <div className={PostStyles.contentBox}>
         <p>{content}</p>
-        {mediaURL?.image && <img src={mediaURL?.image} alt="user uploads" />}
-        {mediaURL?.video && (
+        {mediaUrl?.image && <img src={mediaUrl?.image} alt="user uploads" />}
+        {mediaUrl?.video && (
           <video controls>
-            <source src={mediaURL?.video} />
+            <source src={mediaUrl?.video} />
           </video>
         )}
       </div>
