@@ -16,6 +16,7 @@ const UserDetail = (details) => {
     followers,
     following,
     _id,
+    setShowSettings
   } = details;
   const { userInfo } = useAuth();
   const { handleFollowUser, handleUnfollowUser } = useUser();
@@ -35,6 +36,10 @@ const UserDetail = (details) => {
     navigate("/editProfile")
   }
 
+  const handleSettingsClick = () => {
+    setShowSettings(true);
+  }
+
   const isFollowing = !!userInfo?.following.find(user => user._id === _id);
 
   return (
@@ -52,7 +57,7 @@ const UserDetail = (details) => {
               <button className={ProfileStyles.editProfile} onClick={handleEditProfile}>
                 Edit Profile
               </button>
-              <Settings />
+              <button className={ProfileStyles.settings} onClick={handleSettingsClick}><Settings /></button>
             </>
           ) : (
             <>
