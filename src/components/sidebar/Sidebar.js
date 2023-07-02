@@ -5,12 +5,16 @@ import SidebarStyles from "./Sidebar.module.css";
 import { UserDp } from "components/userDp/UserDp";
 import { useAuth } from "context/AuthContext";
 
-const Sidebar = ({setShowCreatePost}) => {
+const Sidebar = ({setShowCreatePost, showSearch, setShowSearch}) => {
   const { userInfo } = useAuth();
   const { dpUrl, username } = userInfo;
 
   const styleActive = ({ isActive }) =>
-    isActive ? `${SidebarStyles.active}` : "";
+    isActive && !showSearch ? `${SidebarStyles.active}` : "";
+
+  const handleShowSearch = () => {
+    setShowSearch(prev => !prev);
+  }
 
   return (
     <nav className={`flex-container ${SidebarStyles.sidebar}`}>
@@ -27,7 +31,7 @@ const Sidebar = ({setShowCreatePost}) => {
           </NavLink>
         </li>
 
-        <li className={SidebarStyles.listItem}>
+        <li className={`${SidebarStyles.listItem} ${showSearch ? `${SidebarStyles.itemActive}` : ``}`} onClick={handleShowSearch}>
           <Search className={SidebarStyles.icons} /> Search
         </li>
 

@@ -1,10 +1,12 @@
 .sidebar{
     padding: 1rem;
     position: fixed;
-    left: 4rem;
-    width: 20vw;
-    height: 80vh;
+    width: 25vw;
+    height: 100%;
     display: none;
+    border: 1px solid blue;
+    z-index: 2;
+    background-color: var(--clr-background);
 }
 
 .listItem{
@@ -35,6 +37,7 @@
     }
 }
 
+
 .listItem a{
     color: var(--clr-primary);
     display: flex;
@@ -47,14 +50,18 @@
 
 }
 
+.itemActive{
+    color: var(--clr-accent);
+}
+
 .create{
     background-color: var(--clr-accent);
     color: var(--clr-white);
     font-weight: var(--fw-bold);
     padding: 0.8rem 2rem;
     border-radius: 1.5rem;
-    margin-top: auto;
     align-self: center;
+    margin-top: 2rem;
 }
 
 @media(min-width: 50em){

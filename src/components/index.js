@@ -5,3 +5,4 @@ export {Post} from "./post/Post";
 export {UserDp} from "./userDp/UserDp";
 export {Modal} from "./modal/Modal";
 export {CreatePost} from "./createPost/CreatePost";
+export {Search} from "./search/Search";

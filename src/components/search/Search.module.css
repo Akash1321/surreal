@@ -1,0 +1,29 @@
+.container{
+    border: 1px solid white;
+    position: fixed;
+    width: 100%;
+    transition: left 0.5s ease-in-out;
+    background-color: var(--clr-background);
+    z-index: 1;
+    height: 100%;
+}
+
+.container.show{
+    left: 0;
+}
+
+.container.hide{
+    left: -100%;
+}
+
+@media(min-width: 50em){
+    .container{
+        width: 25vw;
+        
+    }
+
+    .container.show{
+        left: 26%;
+    }
+    
+}

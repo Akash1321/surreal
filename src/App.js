@@ -1,27 +1,36 @@
-
-import './App.css';
-import {BottomNav, CreatePost, Sidebar} from "components";
-import { useAuth } from 'context/AuthContext';
-import AllRoutes from 'Routes/AllRoutes';
-import {useState} from "react";
+import "./App.css";
+import { BottomNav, CreatePost, Sidebar, Search } from "components";
+import { useAuth } from "context/AuthContext";
+import AllRoutes from "Routes/AllRoutes";
+import { useState } from "react";
 
 function App() {
   const [showCreatePost, setShowCreatePost] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
-  const {token} = useAuth();
+  const { token } = useAuth();
   return (
     <div className="App">
-
-{token && (
+      {token && (
         <>
-        <Sidebar setShowCreatePost={setShowCreatePost}/>
-        <BottomNav setShowCreatePost={setShowCreatePost}/>
-        {showCreatePost && <CreatePost setShowCreatePost={setShowCreatePost}/>}
+          <Sidebar
+            setShowCreatePost={setShowCreatePost}
+            showSearch={showSearch}
+            setShowSearch={setShowSearch}
+          />
+          <BottomNav
+            setShowCreatePost={setShowCreatePost}
+            showSearch={showSearch}
+            setShowSearch={setShowSearch}
+          />
+          {showCreatePost && (
+            <CreatePost setShowCreatePost={setShowCreatePost} />
+          )}
         </>
       )}
 
+      <Search showSearch={showSearch} setShowSearch={setShowSearch} />
       <AllRoutes />
-
     </div>
   );
 }

@@ -5,13 +5,17 @@ import NavStyles from "./BottomNav.module.css";
 import { UserDp } from "components/userDp/UserDp";
 import { useAuth } from "context/AuthContext";
 
-const BottomNav = ({setShowCreatePost}) => {
+const BottomNav = ({setShowCreatePost, showSearch, setShowSearch}) => {
 
   const {userInfo} = useAuth();
   const {dpUrl, username} = userInfo;
 
     const styleActive = ({ isActive }) =>
-      isActive ? `${NavStyles.active}` : "";
+      isActive && !showSearch ? `${NavStyles.active}` : "";
+
+    const handleShowSearch = () => {
+        setShowSearch(prev => !prev);
+      }
   
     return (
       <nav className={`flex-container ${NavStyles.bottomNav}`}>
@@ -28,7 +32,7 @@ const BottomNav = ({setShowCreatePost}) => {
             </NavLink>
           </li>
   
-          <li className={NavStyles.listItem}>
+          <li className={`${NavStyles.listItem} ${showSearch ? `${NavStyles.itemActive}` : ``}`} onClick={handleShowSearch}>
             <Search className={NavStyles.icons} />
           </li>
   
