@@ -31,7 +31,8 @@ const EditProfile = () => {
 
   const handleEditProfile = (e) => {
     e.preventDefault();
-    handleEditUser(profileValues)
+    handleEditUser(profileValues);
+    navigate(-1);
   };
 
   const handleSelectedImage = (e) => {
