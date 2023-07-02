@@ -1,8 +1,8 @@
+
 .header{
     text-align: center;
     font-weight: var(--fw-bold);
-    margin-top: -1.5rem;
-    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 .dp{
@@ -16,7 +16,7 @@
     width: 20rem;
     gap: 1rem;
     padding: 1rem;
-    max-height: 60vh;
+    max-height: 65vh;
 }
 
 

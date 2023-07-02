@@ -115,7 +115,7 @@ const CreatePost = ({ setShowCreatePost, id, content, mediaUrl, editPost }) => {
 
   return (
     <Modal setShowModal={setShowCreatePost}>
-      <div>
+      <div className={CreatePostStyles.container}>
         <h1 className={CreatePostStyles.header}>
           {editPost ? "Edit Post" : "New Post"}
         </h1>

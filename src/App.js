@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
 
-      {token && (
+{token && (
         <>
         <Sidebar setShowCreatePost={setShowCreatePost}/>
         <BottomNav setShowCreatePost={setShowCreatePost}/>
