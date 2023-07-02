@@ -7,22 +7,22 @@ import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
 import { usePosts } from "context/PostsContext";
 
-const CreatePost = ({ setShowCreatePost }) => {
+const CreatePost = ({ setShowCreatePost, id, content, mediaUrl, editPost }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [postInputValues, setPostInputValues] = useState({
-    content: "",
+    content: editPost ? content : "",
     mediaUrl: {
-      image: "",
-      video: "",
+      image: editPost ? mediaUrl?.image : "",
+      video: editPost ? mediaUrl?.video : "",
     },
   });
   const [previewLink, setPreviewLink] = useState({
-    image: "",
-    video: "",
+    image: editPost ? mediaUrl?.image : "",
+    video: editPost ? mediaUrl?.video : "",
   });
 
   const { userInfo } = useAuth();
-  const { handleUploadPost } = usePosts();
+  const { handleUploadPost, handleEditPost } = usePosts();
 
   const handleImageSelection = (e) => {
     const selectedImage = e.target.files[0];
@@ -58,6 +58,11 @@ const CreatePost = ({ setShowCreatePost }) => {
     setPreviewLink((prev) => ({
       ...prev,
       [fileType]: "",
+    }));
+
+    setPostInputValues((prev) => ({
+      ...prev,
+      mediaUrl: { ...prev.mediaUrl, [fileType]: "" },
     }));
   };
 
@@ -97,17 +102,23 @@ const CreatePost = ({ setShowCreatePost }) => {
           };
 
           setPostInputValues(updatedPostInputValues);
-          handleUploadPost(updatedPostInputValues);
+          editPost? handleEditPost(updatedPostInputValues, id) : handleUploadPost(updatedPostInputValues);
         });
     } else {
-      handleUploadPost(postInputValues);
+      editPost ? handleEditPost(postInputValues, id) : handleUploadPost(postInputValues);
     }
+
+    setShowCreatePost(false);
   };
+
+
 
   return (
     <Modal setShowModal={setShowCreatePost}>
       <div>
-        <h1 className={CreatePostStyles.header}>New Post</h1>
+        <h1 className={CreatePostStyles.header}>
+          {editPost ? "Edit Post" : "New Post"}
+        </h1>
 
         <form className={CreatePostStyles.form} onSubmit={handlePostSubmit}>
           <div className={CreatePostStyles.formHeader}>
@@ -133,7 +144,7 @@ const CreatePost = ({ setShowCreatePost }) => {
                 className={CreatePostStyles.cancel}
                 onClick={() => handleCancelPreview("image")}
               />
-              <img src={previewLink?.image} />
+              <img src={previewLink?.image} alt="preview" />
             </div>
           )}
 
@@ -180,7 +191,7 @@ const CreatePost = ({ setShowCreatePost }) => {
             </div>
           </div>
 
-          <button className={CreatePostStyles.postButton}>Post</button>
+          <button className={CreatePostStyles.postButton}>{editPost ? "Edit" : "Post"}</button>
         </form>
       </div>
     </Modal>

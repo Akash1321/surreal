@@ -6,6 +6,7 @@ import {
   bookmarkRemoveService,
   deletePostService,
   dislikePostService,
+  editPostService,
   getAllBookmarks,
   getAllPosts,
   getPostService,
@@ -128,6 +129,21 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
+  //edot post
+
+  const handleEditPost = async (postData, id) => {
+    try{
+      const {status, data: {posts}} = await editPostService(postData, id, token);
+
+      if(status === 201){
+        postsDispatch({type: "ALL_POSTS", payload: posts});
+      }
+
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   //delete post
 
   const handleDeletePost = async (id) => {
@@ -225,6 +241,7 @@ export const PostsProvider = ({ children }) => {
         handleGetUserPosts,
         handleGetPost,
         handleUploadPost,
+        handleEditPost,
         handleDeletePost,
         handlePostLike,
         handlePostDislike,

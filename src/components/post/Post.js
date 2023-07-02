@@ -5,6 +5,7 @@ import { PostInteraction } from "./components/PostInteraction";
 import { useNavigate } from "react-router-dom";
 import { usePosts } from "context/PostsContext";
 import { FormInput } from "components/formInput/FormInput";
+import { CreatePost } from "components/createPost/CreatePost";
 
 const Post = ({
   _id,
@@ -17,6 +18,7 @@ const Post = ({
   updatedAt,
 }) => {
   const [addCommentView, setAddCommentView] = useState(false);
+  const [showEditPost, setShowEditPost] = useState(false);
 
   const { handleAddComment } = usePosts();
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ const Post = ({
 
   return (
     <li className={PostStyles.postContainer} onClick={handlePostClick}>
-      <PostHeader id={_id} username={username} createdAt={createdAt} />
+      <PostHeader id={_id} username={username} createdAt={createdAt} setShowEditPost={setShowEditPost} />
 
       <div className={PostStyles.contentBox}>
         <p>{content}</p>
@@ -74,6 +76,7 @@ const Post = ({
       </form>
       )}
 
+      {showEditPost && <CreatePost setShowCreatePost={setShowEditPost} id={_id} content={content} mediaUrl={mediaUrl} editPost/>}
     </li>
   );
 };

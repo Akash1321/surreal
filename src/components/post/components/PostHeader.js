@@ -7,8 +7,9 @@ import {useNavigate} from 'react-router-dom';
 import { useState } from "react";
 import { usePosts } from "context/PostsContext";
 
-const PostHeader = ({id, username, createdAt, detail}) => {
+const PostHeader = ({id, username, createdAt, detail, setShowEditPost}) => {
     const [showMore, setShowMore] = useState(false);
+    
     const {userInfo} = useAuth();
     const {userState: {allUsers}} = useUser();
     const {handleDeletePost} = usePosts();
@@ -32,6 +33,11 @@ const PostHeader = ({id, username, createdAt, detail}) => {
         navigate(`/profile/${username}`);
     }
 
+    const handleEditClick = (e) => {
+        e.stopPropagation();
+        setShowEditPost(true);
+    }
+
     const handleDeleteClick = (e) => {
         e.stopPropagation();
         handleDeletePost(id);
@@ -47,9 +53,11 @@ const PostHeader = ({id, username, createdAt, detail}) => {
             {!detail && <p className={PostStyles.time}>{timeOfPosting}</p>}
             {checkProfile && <button className={PostStyles.more} onClick={handleShowMore}><MoreHorizontal /></button>}
             {showMore && <div className={PostStyles.showMore}>
-                <button>Edit</button>
+                <button onClick={handleEditClick}>Edit</button>
                 <button onClick={handleDeleteClick}>Delete</button>
                 </div>}
+
+            
         </div>
     )
 }

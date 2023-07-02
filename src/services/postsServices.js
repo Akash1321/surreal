@@ -28,13 +28,20 @@ const uploadPostService = (postData, token) => {
   );
 };
 
-const deletePostService = (id, token) => {
-  return axios.delete(
-    `/api/posts/${id}`,
+const editPostService = (postData, id, token) => {
+  return axios.post(
+    `/api/posts/edit/${id}`,
+    { postData },
     {
       headers: { authorization: token },
     }
   );
+};
+
+const deletePostService = (id, token) => {
+  return axios.delete(`/api/posts/${id}`, {
+    headers: { authorization: token },
+  });
 };
 
 //likes
@@ -102,6 +109,7 @@ export {
   getUserPosts,
   getPostService,
   uploadPostService,
+  editPostService,
   deletePostService,
   likePostService,
   dislikePostService,
