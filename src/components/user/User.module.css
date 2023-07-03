@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.link{
+    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.name{
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary);
+}
+
+.username{
+    color: var(--clr-neutral);
+}
+
+.follow{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    border-radius: 0.5rem;
+    margin-left: auto;
+}
+
+.unfollow{
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-background);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-accent);
+    border-radius: 0.5rem;
+    margin-left: auto;
+}
