@@ -13,11 +13,13 @@ const User = (detail) => {
     const isFollowing = !!userInfo?.following.find(user => user._id === _id);
 
 
-    const handleFollowButton = () => {
+    const handleFollowButton = (e) => {
+        e.stopPropagation()
         handleFollowUser(_id);
       };
     
-      const handleUnfollowButton = () => {
+      const handleUnfollowButton = (e) => {
+        e.stopPropagation()
         handleUnfollowUser(_id);
       };
 

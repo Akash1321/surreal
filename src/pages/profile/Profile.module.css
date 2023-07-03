@@ -129,10 +129,45 @@
     color: red;
 }
 
+.userList{
+    width: 80vw;
+    max-height: 70vh;
+}
+
+.userListHeader{
+    font-weight: var(--fw-bold);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.userListContainer{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.userListContainer > li{
+    padding: 0.5rem;
+}
+.userListDp{
+    width: 3rem;
+    height: 3rem;
+}
+
+.emptyListInfo{
+    padding: 2rem;
+    text-align: center;
+}
 
 @media(min-width: 50em){
     .details, .detailHighlight{
         max-width: 33rem;
+    }
+
+    .userList{
+        width: 25rem;
     }
 
 }

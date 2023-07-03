@@ -2,10 +2,14 @@ import { UserDp } from "components";
 import { useAuth } from "context/AuthContext";
 import { useUser } from "context/UserContext";
 import ProfileStyles from "pages/profile/Profile.module.css";
+import { useState } from "react";
 import { Settings } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
+import { UserList } from "./UserList";
 
 const UserDetail = (details) => {
+  const [showUserList, setShowUserList] = useState(false);
+  const [toShow, setToShow] = useState("");
   const {
     dpUrl,
     username,
@@ -38,6 +42,16 @@ const UserDetail = (details) => {
 
   const handleSettingsClick = () => {
     setShowSettings(true);
+  }
+
+  const handleFollowersButton = () => {
+    setShowUserList(true);
+    setToShow("followers");
+  }
+
+  const handleFollowingButton = () => {
+    setShowUserList(true);
+    setToShow("following");
   }
 
   const isFollowing = !!userInfo?.following.find(user => user._id === _id);
@@ -96,14 +110,16 @@ const UserDetail = (details) => {
           {allUserPosts?.length} <span>posts</span>
         </div>
 
-        <button>
+        <button onClick={handleFollowersButton}>
           {followers?.length} <span>followers</span>
         </button>
 
-        <button>
+        <button onClick={handleFollowingButton}>
           {following?.length} <span>following</span>
         </button>
       </div>
+
+      {showUserList && <UserList toShow={toShow} setShowUserList={setShowUserList} />}
     </>
   );
 };
