@@ -23,6 +23,7 @@ const initials = {
   allBookmarks: [],
   allUserPosts: [],
   viewPost: {},
+  sortBy: "latest",
 };
 
 const postsReducer = (state, action) => {
@@ -38,6 +39,9 @@ const postsReducer = (state, action) => {
 
     case "USER_POSTS":
       return {...state, allUserPosts: action.payload}
+
+    case "CHANGE_SORT_BY":
+      return {...state, sortBy: action.payload}
 
     default:
       return state;
@@ -233,11 +237,12 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
-  console.log(state.allPosts);
+  console.log(state.sortBy);
   return (
     <PostsContext.Provider
       value={{
         state,
+        postsDispatch,
         handleGetUserPosts,
         handleGetPost,
         handleUploadPost,

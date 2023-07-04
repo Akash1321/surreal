@@ -35,7 +35,7 @@ const User = (detail) => {
 
             {isUserLoggedIn && (
                 <>
-                {isFollowing ? <button className={StyleUser.unfollow} onClick={handleUnfollowButton}>Unfollow</button> : <button className={StyleUser.unfollow} onClick={handleFollowButton}>Follow</button>}
+                {isFollowing ? <button className={StyleUser.unfollow} onClick={handleUnfollowButton}>Unfollow</button> : <button className={StyleUser.follow} onClick={handleFollowButton}>Follow</button>}
                 </>
             )}
           
