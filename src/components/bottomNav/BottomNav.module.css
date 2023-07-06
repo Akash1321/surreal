@@ -8,6 +8,7 @@
     right: 0;
     background-color: var(--clr-background);
     z-index: 2;
+    border-top: 1px solid var(--clr-accent);
 }
 
 .active{

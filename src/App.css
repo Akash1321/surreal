@@ -11,10 +11,10 @@
 
 
 .content-container{
-    border: 1px solid red;
     margin-left: 0;
     width: 100%;
     padding-inline: 1rem;
+    padding-bottom: 5rem;
 }
 
 .requires-top-padding{
@@ -32,5 +32,6 @@
     .content-container{
         margin-inline: auto;
         max-width: calc(100% - 55vw);
+        padding-bottom: 1rem;
     }
 }
