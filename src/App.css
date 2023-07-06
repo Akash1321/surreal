@@ -17,6 +17,10 @@
     padding-inline: 1rem;
 }
 
+.requires-top-padding{
+    padding-top: 1rem;
+}
+
 .empty-list{
     text-align: center;
     font-weight: var(--fw-bold);

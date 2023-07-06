@@ -8,7 +8,7 @@ const Bookmarks = () => {
     const bookmarkPosts = allPosts?.filter(({_id}) => allBookmarks?.includes(_id));
     
     return (
-        <div className="content-container">
+        <div className="content-container requires-top-padding">
             {bookmarkPosts.length > 0 ? (
                 <ul className="flex-container feed">
                 {bookmarkPosts?.map(postData => (

@@ -19,7 +19,7 @@ const Profile = () => {
     }, [userName])
 
     return (
-        <div className="content-container">
+        <div className="content-container requires-top-padding">
            <UserDetail {...userProfile} allUserPosts={allUserPosts} setShowSettings={setShowSettings}/>
 
            <ul className="flex-container feed">
