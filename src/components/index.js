@@ -8,3 +8,4 @@ export {CreatePost} from "./createPost/CreatePost";
 export {Search} from "./search/Search";
 export {User} from "./user/User";
 export {SortPosts} from "./sortPosts/SortPosts";
+export {Suggestion} from "./suggestion/Suggestion";

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BottomNav, CreatePost, Sidebar, Search } from "components";
+import { BottomNav, CreatePost, Sidebar, Search, Suggestion } from "components";
 import { useAuth } from "context/AuthContext";
 import AllRoutes from "Routes/AllRoutes";
 import { useState } from "react";
@@ -26,6 +26,7 @@ function App() {
           {showCreatePost && (
             <CreatePost setShowCreatePost={setShowCreatePost} />
           )}
+          <Suggestion />
         </>
       )}
 
