@@ -51,7 +51,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     handleAllUsers();
-  }, []);
+  }, [token]);
 
   const handleEditUser = async (commentData) => {
     try{
