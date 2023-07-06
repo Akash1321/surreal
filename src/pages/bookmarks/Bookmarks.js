@@ -9,12 +9,13 @@ const Bookmarks = () => {
     
     return (
         <div className="content-container">
-            <h2>Bookmarks</h2>
-            <ul className="flex-container feed">
+            {bookmarkPosts.length > 0 ? (
+                <ul className="flex-container feed">
                 {bookmarkPosts?.map(postData => (
                     <Post key={postData._id} {...postData} />
                 ))}
             </ul>
+            ) : <p className="empty-list">No Bookmarks yet</p>}
         
         </div>
         

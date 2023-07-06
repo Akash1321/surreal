@@ -6,8 +6,6 @@ const Explore = () => {
 
     return (
         <div className="content-container">
-            <h2>Explore</h2>
-
             <ul className="flex-container feed">
                 {state?.allPosts?.map(postData => (
                     <Post key={postData._id} {...postData}/>

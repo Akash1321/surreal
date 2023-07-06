@@ -17,6 +17,12 @@
     padding-inline: 1rem;
 }
 
+.empty-list{
+    text-align: center;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-500);
+    margin-top: 8rem;
+}
 
 @media(min-width: 50em){
     .content-container{

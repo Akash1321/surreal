@@ -31,11 +31,13 @@ const Home = () => {
   return (
     <div className="content-container">
       <SortPosts />
-      <ul className="flex-container feed">
+      {sortPosts?.length > 0 ? (
+        <ul className="flex-container feed">
         {sortPosts?.map((postData) => (
           <Post key={postData._id} {...postData} />
         ))}
       </ul>
+      ) : <p className="empty-list">No Posts to show</p>}
     </div>
   );
 };
