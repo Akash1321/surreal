@@ -237,7 +237,7 @@ export const PostsProvider = ({ children }) => {
     }
   }
 
-  console.log(state.sortBy);
+  
   return (
     <PostsContext.Provider
       value={{

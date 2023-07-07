@@ -34,6 +34,7 @@ export const signupHandler = function (schema, request) {
       _id,
       createdAt: formatDate(),
       updatedAt: formatDate(),
+      dpUrl: "https://res.cloudinary.com/dnj52nahi/image/upload/v1688712943/socialMedia/User_07a_xyycrq.png",
       username,
       password,
       ...rest,

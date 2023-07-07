@@ -33,7 +33,7 @@ const userReducer = (state, action) => {
 
 export const UserProvider = ({ children }) => {
   const [userState, userDispatch] = useReducer(userReducer, initials);
-  const { setUserInfo, token } = useAuth();
+  const { setUserInfo, userInfo, token, handleUserLogout } = useAuth();
 
   const handleAllUsers = async () => {
     try {
