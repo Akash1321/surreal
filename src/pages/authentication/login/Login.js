@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   const handleGuestLogin = () => {
-    setInputValues({username: "adarshbalika", password: "adarshBalika123"})
+    setInputValues({username: "adarshbalak", password: "adarshBalak123"})
   }
 
   const handleLoginForm = (e) => {
