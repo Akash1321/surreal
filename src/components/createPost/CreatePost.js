@@ -171,7 +171,7 @@ const CreatePost = ({ setShowCreatePost, id, content, mediaUrl, editPost }) => {
               />
             </label>
 
-            <label>
+            {/* <label>
               <Video />
               <input
                 type="file"
@@ -179,7 +179,7 @@ const CreatePost = ({ setShowCreatePost, id, content, mediaUrl, editPost }) => {
                 name="video"
                 onChange={handleVideoSelection}
               />
-            </label>
+            </label> */}
 
             <div className={CreatePost.emojiContainer}>
               <Smile onClick={() => setShowEmojiPicker((prev) => !prev)} />
