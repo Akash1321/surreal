@@ -9,7 +9,7 @@
   --clr-background: #0e0d0d;
 
   /* --clr-primary: #262626;
-  --clr-background: var(--clr-white); */
+  --clr-background: #ffffff; */
 
   --clr-accent: #6F46A9;
   --clr-neutral: #999999;
@@ -90,6 +90,24 @@ h6 {
 
 #root{
   isolation: isolate;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(153, 153, 153, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-accent);
+  border-radius: 1rem;
+  border: 0.2rem solid transparent;
+  background-clip: content-box;
+  
+
+  /* outline: 1px solid slategrey; */
 }
 
 @media (prefers-reduced-motion: reduce) {
