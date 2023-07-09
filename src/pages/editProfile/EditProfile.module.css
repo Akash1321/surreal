@@ -22,6 +22,7 @@
     border: 1px solid var(--clr-neutral);
     border-radius: 0.5rem;
     color: var(--clr-primary);
+    flex-grow: 1;
 }
 
 .form input:focus{
