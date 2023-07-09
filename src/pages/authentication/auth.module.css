@@ -20,12 +20,18 @@
     margin-top: 0.5rem;
 }
 
+.form div{
+    border: 1px solid var(--clr-neutral);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
 .form input{
     padding: 1rem;
     background-color: var(--clr-background);
-    border: 1px solid var(--clr-neutral);
-    border-radius: 0.5rem;
+    border: none;
     color: var(--clr-primary);
+    flex-grow: 1;
 }
 
 .form input:focus{

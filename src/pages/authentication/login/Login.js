@@ -28,7 +28,6 @@ const Login = () => {
       id: 2,
       name: "password",
       placeholder: "Enter Password",
-      type: "password",
       label: "Password",
       required: true,
     },
