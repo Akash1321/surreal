@@ -45,6 +45,12 @@ const PostInteraction = ({ likes, id, setAddCommentView }) => {
     setAddCommentView((prev) => !prev);
   };
 
+  const handleLinkCopy = async  (e) => {
+    e.stopPropagation();
+    await navigator.clipboard.writeText(`https://surreal-react.vercel.app/post/${id}`);
+    alert("link copied");
+  }
+
   return (
     <div className={PostStyles.interact}>
       <button onClick={handleLikeButton}>
@@ -57,7 +63,7 @@ const PostInteraction = ({ likes, id, setAddCommentView }) => {
         <MessageCircle className={PostStyles.icons} />
       </button>
 
-      <button>
+      <button onClick={handleLinkCopy}>
         <Share2 className={PostStyles.icons} />
       </button>
 
