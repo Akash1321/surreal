@@ -3,7 +3,8 @@ import { BottomNav, CreatePost, Sidebar, Search, Suggestion } from "components";
 import { useAuth } from "context/AuthContext";
 import AllRoutes from "Routes/AllRoutes";
 import { useEffect, useState } from "react";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [showCreatePost, setShowCreatePost] = useState(false);
@@ -12,13 +13,13 @@ function App() {
   const { token } = useAuth();
   const location = useLocation();
 
-  const onLocationChange = () =>{
+  const onLocationChange = () => {
     setShowSearch(false);
     window.scroll(0, 0);
-  }
+  };
 
   useEffect(() => {
-    onLocationChange()
+    onLocationChange();
   }, [location]);
 
   return (
@@ -44,6 +45,32 @@ function App() {
 
       <Search showSearch={showSearch} setShowSearch={setShowSearch} />
       <AllRoutes />
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 1000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
     </div>
   );
 }
