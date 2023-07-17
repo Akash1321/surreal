@@ -52,7 +52,7 @@ const Post = ({
         <p>{content}</p>
         {mediaUrl?.image && <img src={mediaUrl?.image} alt="user uploads" />}
         {mediaUrl?.video && (
-          <video controls>
+          <video controls onClick={(e) => e.stopPropagation()}>
             <source src={mediaUrl?.video} />
           </video>
         )}
