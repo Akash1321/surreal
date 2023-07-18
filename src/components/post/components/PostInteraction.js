@@ -2,6 +2,7 @@ import { Heart, Bookmark, MessageCircle, Share2 } from "react-feather";
 import PostStyles from "components/post/Post.module.css";
 import { usePosts } from "context/PostsContext";
 import { useAuth } from "context/AuthContext";
+import { toast } from "react-hot-toast";
 
 const PostInteraction = ({ likes, id, setAddCommentView }) => {
   const {
@@ -48,7 +49,7 @@ const PostInteraction = ({ likes, id, setAddCommentView }) => {
   const handleLinkCopy = async  (e) => {
     e.stopPropagation();
     await navigator.clipboard.writeText(`https://surreal-react.vercel.app/post/${id}`);
-    alert("link copied");
+    toast("Link Copied")
   }
 
   return (

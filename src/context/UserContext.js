@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { toast } from "react-hot-toast";
 import {
   editUserService,
   followUserService,
@@ -60,6 +61,7 @@ export const UserProvider = ({ children }) => {
       if(status === 201){
         userDispatch({type: "UPDATE_USER", payload: user});
         setUserInfo(user);
+        toast.success("Profile Updated")
       }
 
     }catch(error){

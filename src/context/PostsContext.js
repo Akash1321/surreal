@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { toast } from "react-hot-toast";
 
 import {
   addCommentService,
@@ -126,10 +127,11 @@ export const PostsProvider = ({ children }) => {
 
       if(status === 201){
         postsDispatch({type: "ALL_POSTS", payload: posts});
+        toast.success("Post Uploaded");
       }
 
     }catch(error){
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -141,6 +143,7 @@ export const PostsProvider = ({ children }) => {
 
       if(status === 201){
         postsDispatch({type: "ALL_POSTS", payload: posts});
+        toast.success("Post Edited");
       }
 
     }catch(error){
@@ -155,7 +158,8 @@ export const PostsProvider = ({ children }) => {
       const {status, data: {posts}} = await deletePostService(id, token);
 
       if(status === 201){
-        postsDispatch({type: "ALL_POSTS", payload: posts})
+        postsDispatch({type: "ALL_POSTS", payload: posts});
+        toast.success("Post Deleted");
       }
 
     }catch(error){
@@ -230,7 +234,8 @@ export const PostsProvider = ({ children }) => {
       const {status, data: {posts}} = await addCommentService(id, comment, token);
 
       if(status === 201){
-        postsDispatch({type: "ALL_POSTS", payload: posts})
+        postsDispatch({type: "ALL_POSTS", payload: posts});
+        toast.success("Comment Posted");
       }
     }catch(error){
       console.log(error)
