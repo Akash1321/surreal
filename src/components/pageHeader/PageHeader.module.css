@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0; 
+}
+
+.arrow{
+    color: var(--clr-neutral);
+}
+
+.header > h1{
+    font-weight: var(--fw-bold);
+}

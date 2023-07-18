@@ -1,4 +1,4 @@
-import { Post } from "components";
+import { PageHeader, Post } from "components";
 import { usePosts } from "context/PostsContext";
 
 const Explore = () => {
@@ -6,7 +6,8 @@ const Explore = () => {
 
     return (
         <div className="content-container">
-            <ul className="flex-container feed requires-top-padding">
+            <PageHeader page="Explore"/>
+            <ul className="flex-container feed ">
                 {state?.allPosts?.map(postData => (
                     <Post key={postData._id} {...postData}/>
                 ))}

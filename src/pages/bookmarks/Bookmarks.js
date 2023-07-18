@@ -1,4 +1,4 @@
-import { Post } from "components";
+import { PageHeader, Post } from "components";
 import { usePosts } from "context/PostsContext";
 
 
@@ -8,7 +8,8 @@ const Bookmarks = () => {
     const bookmarkPosts = allPosts?.filter(({_id}) => allBookmarks?.includes(_id));
     
     return (
-        <div className="content-container requires-top-padding">
+        <div className="content-container">
+            <PageHeader page="Bookmarks"/>
             {bookmarkPosts.length > 0 ? (
                 <ul className="flex-container feed">
                 {bookmarkPosts?.map(postData => (

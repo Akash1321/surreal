@@ -1,17 +1,15 @@
-import { Post } from "components";
+import { PageHeader, Post } from "components";
 import { PostHeader } from "components/post/components/PostHeader";
 import { usePosts } from "context/PostsContext";
 import DetailStyles from "pages/postDetail/PostDetail.module.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import {ArrowLeft} from "react-feather";
 
 const PostDetail = () => {
   const {postId} = useParams();
   const {
     state: { viewPost }, handleGetPost,
   } = usePosts();
-  const navigate = useNavigate();
 
   useEffect(() => {
     handleGetPost(postId)
@@ -24,10 +22,7 @@ const PostDetail = () => {
   return (
     <div className="content-container">
 
-      <header className={DetailStyles.header}>
-        <ArrowLeft className={DetailStyles.arrow} onClick={() => navigate(-1)}/>
-        <h1>Post Detail</h1>
-      </header>
+      <PageHeader page="Post Detail"/>
       
       <Post {...viewPost} />
 
