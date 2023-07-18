@@ -49,7 +49,7 @@ const PostInteraction = ({ likes, id, setAddCommentView }) => {
   const handleLinkCopy = async  (e) => {
     e.stopPropagation();
     await navigator.clipboard.writeText(`https://surreal-react.vercel.app/post/${id}`);
-    toast("Link Copied")
+    toast.success("Link Copied")
   }
 
   return (
