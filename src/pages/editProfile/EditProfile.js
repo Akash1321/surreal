@@ -52,11 +52,11 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="content-container">
-      <div className={EditProfileStyles.header}>
+    <div className="content-container requires-top-padding">
+      <header className={EditProfileStyles.header}>
         <ArrowLeft onClick={handleEditDiscard} />
         <h2>Edit Profile</h2>
-      </div>
+      </header>
       <form className={EditProfileStyles.form} onSubmit={handleEditProfile}>
         <div className={EditProfileStyles.imageContainer}>
           <UserDp
